@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChainOfRespon", "ChainOfRespon\ChainOfRespon.vcproj", "{7BDE93CF-832F-4CC1-9543-FAD2F43659D1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Observer", "Observer\Observer.vcproj", "{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{7BDE93CF-832F-4CC1-9543-FAD2F43659D1}.Debug|Win32.Build.0 = Debug|Win32
 		{7BDE93CF-832F-4CC1-9543-FAD2F43659D1}.Release|Win32.ActiveCfg = Release|Win32
 		{7BDE93CF-832F-4CC1-9543-FAD2F43659D1}.Release|Win32.Build.0 = Release|Win32
+		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Debug|Win32.Build.0 = Debug|Win32
+		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Release|Win32.ActiveCfg = Release|Win32
+		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

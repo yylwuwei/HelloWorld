@@ -19,5 +19,19 @@ int main()
 	wprintf(_T("%s\n"), wStrGUID);
 	//test ConverByteArrayToGUIDStringW end
 
+	//test ConvertCharToWChar begin
+	char pStr[] = "hello";
+	wchar_t pwStr[100] = {0};
+	ConvertCharToWChar(pStr, pwStr);
+	wprintf(_T("%s\n"), pwStr);
+	//test ConvertCharToWChar end
+
+	//test ConvertWCharToChar begin
+	wchar_t pwStr2[] = _T("world");
+	char pStr2[100] = {0};
+	ConvertWCharToChar(pwStr2, pStr2);
+	printf("%s\n", pStr2);
+	//test ConvertWCharToChar end
+
 	return 0;
 }

@@ -1,4 +1,4 @@
 #pragma once
 
-#define RET_OK 1
-#define RET_ERR -1
+const int RET_OK = 1;
+const int RET_ERR = -1;

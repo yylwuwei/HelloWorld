@@ -15,7 +15,7 @@ int main()
 	//test ConverByteArrayToGUIDStringW begin
 	byte wByteArray[16] = {229,197,78,31,129,246,66,113,168,7,143,58,186,55,177,79};
 	wchar_t wStrGUID[100] = {0};
-	ConverByteArrayToGUIDStringW(wByteArray, wStrGUID);
+	ConvertByteArrayToGUIDStringW(wByteArray, wStrGUID);
 	wprintf(_T("%s\n"), wStrGUID);
 	//test ConverByteArrayToGUIDStringW end
 
@@ -32,6 +32,8 @@ int main()
 	ConvertWCharToChar(pwStr2, pStr2);
 	printf("%s\n", pStr2);
 	//test ConvertWCharToChar end
+
+	
 
 	return 0;
 }

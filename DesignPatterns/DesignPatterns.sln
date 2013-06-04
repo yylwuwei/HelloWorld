@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChainOfRespon", "ChainOfRes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Observer", "Observer\Observer.vcproj", "{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Visitor", "Visitor\Visitor.vcproj", "{1E1F2DBF-1565-42F1-8789-FD34BDB428FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Debug|Win32.Build.0 = Debug|Win32
 		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Release|Win32.ActiveCfg = Release|Win32
 		{AA59279A-1ECE-48EE-B955-BAFD8A1DA414}.Release|Win32.Build.0 = Release|Win32
+		{1E1F2DBF-1565-42F1-8789-FD34BDB428FB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1E1F2DBF-1565-42F1-8789-FD34BDB428FB}.Debug|Win32.Build.0 = Debug|Win32
+		{1E1F2DBF-1565-42F1-8789-FD34BDB428FB}.Release|Win32.ActiveCfg = Release|Win32
+		{1E1F2DBF-1565-42F1-8789-FD34BDB428FB}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

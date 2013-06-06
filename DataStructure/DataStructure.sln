@@ -5,15 +5,15 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CommonTree", "CommonTree\Co
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "List", "List\List.vcproj", "{9F979027-0B78-40E4-BB82-B297F2A6DE92}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AddAlgo", "AddAlgo\AddAlgo.vcproj", "{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CDevTest", "CDevTest\CDevTest.vcproj", "{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Palindrome_C", "Palindrome_C\Palindrome_C.vcproj", "{BA12FED7-4B75-4E6F-85CD-25CBB036FFCE}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ReverseLinkList_C", "ReverseLinkList_C\ReverseLinkList_C.vcproj", "{70B55C69-676F-4D9A-B195-DC22DD8754A7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BinaryTree_C", "BinaryTree_C\BinaryTree_C.vcproj", "{9EB76253-B955-40F2-9670-6E8B7BA7FC36}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AddAlgo_C", "AddAlgo_C\CDevTest.vcproj", "{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DevTest", "DevTest\AddAlgo.vcproj", "{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,14 +29,6 @@ Global
 		{9F979027-0B78-40E4-BB82-B297F2A6DE92}.Debug|Win32.Build.0 = Debug|Win32
 		{9F979027-0B78-40E4-BB82-B297F2A6DE92}.Release|Win32.ActiveCfg = Release|Win32
 		{9F979027-0B78-40E4-BB82-B297F2A6DE92}.Release|Win32.Build.0 = Release|Win32
-		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Debug|Win32.Build.0 = Debug|Win32
-		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Release|Win32.ActiveCfg = Release|Win32
-		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Release|Win32.Build.0 = Release|Win32
-		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Debug|Win32.Build.0 = Debug|Win32
-		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Release|Win32.ActiveCfg = Release|Win32
-		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Release|Win32.Build.0 = Release|Win32
 		{BA12FED7-4B75-4E6F-85CD-25CBB036FFCE}.Debug|Win32.ActiveCfg = Debug|Win32
 		{BA12FED7-4B75-4E6F-85CD-25CBB036FFCE}.Debug|Win32.Build.0 = Debug|Win32
 		{BA12FED7-4B75-4E6F-85CD-25CBB036FFCE}.Release|Win32.ActiveCfg = Release|Win32
@@ -49,6 +41,14 @@ Global
 		{9EB76253-B955-40F2-9670-6E8B7BA7FC36}.Debug|Win32.Build.0 = Debug|Win32
 		{9EB76253-B955-40F2-9670-6E8B7BA7FC36}.Release|Win32.ActiveCfg = Release|Win32
 		{9EB76253-B955-40F2-9670-6E8B7BA7FC36}.Release|Win32.Build.0 = Release|Win32
+		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Debug|Win32.Build.0 = Debug|Win32
+		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Release|Win32.ActiveCfg = Release|Win32
+		{C4C846AF-E73D-48C6-B618-84CEC72E6CA8}.Release|Win32.Build.0 = Release|Win32
+		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Debug|Win32.Build.0 = Debug|Win32
+		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Release|Win32.ActiveCfg = Release|Win32
+		{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

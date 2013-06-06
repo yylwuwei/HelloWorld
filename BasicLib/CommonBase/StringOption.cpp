@@ -52,4 +52,3 @@ BOOL ConvertWCharToChar(wchar_t* pwStr, char* pStr)
 	}
 	return TRUE;
 }
-

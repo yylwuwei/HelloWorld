@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="AddAlgo"
+	Name="DevTest"
 	ProjectGUID="{B064408E-FAE0-4D28-99DE-D9D83D8F75B4}"
 	RootNamespace="AddAlgo"
 	Keyword="Win32Proj"
@@ -171,7 +171,7 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\AddAlgo.cpp"
+				RelativePath=".\DevTest.cpp"
 				>
 			</File>
 			<File

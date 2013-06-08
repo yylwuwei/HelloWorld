@@ -15,7 +15,7 @@ typedef struct _BinaryTreeNode
 
 void InitBinaryTree()
 {
-
+	
 }
 
 void ShowBinaryTree()
@@ -38,13 +38,20 @@ void DeleteBinaryTreeNode()
 
 }
 
+void DestroyBinaryTree()
+{
+
+}
+
 int main()
 {
+	BinareTreeNode* pHeadNode = malloc(sizeof(BinareTreeNode));
 	InitBinaryTree();
 	InsertBinaryTreeNode();
 	SearchBinaryTreeNode();
 	DeleteBinaryTreeNode();
 	ShowBinaryTree();
+	DestroyBinaryTree();
 	printf("binary tree journey!\n");
 	return 0;
 }

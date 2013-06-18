@@ -3,7 +3,7 @@
 #define TRUE 1
 #define FALSE -1
 
-typedef int ElemType; 
+typedef char ElemType; 
 typedef int BOOL;
 
 typedef struct _BinaryTreeNode
@@ -13,7 +13,8 @@ typedef struct _BinaryTreeNode
 	struct _BinaryTreeNode* right;
 }BinareTreeNode;
 
-void InitBinaryTree()
+//First Order Visit
+void InitBinaryTree(BinareTreeNode* pHeadNode)
 {
 	
 }

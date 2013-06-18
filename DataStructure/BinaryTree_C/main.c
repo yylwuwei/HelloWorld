@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <malloc.h>
 
 #define TRUE 1
 #define FALSE -1
@@ -13,18 +14,26 @@ typedef struct _BinaryTreeNode
 	struct _BinaryTreeNode* right;
 }BinareTreeNode;
 
-//First Order Visit
-void InitBinaryTree(BinareTreeNode* pHeadNode)
+//First Order Visit to create
+void CreateBinaryTree(BinareTreeNode* pNode)
 {
-	
+	ElemType elem;
+	scanf("%c", &elem);
+	if ('#' == elem)
+	{
+		pNode = NULL;
+	}
+	else
+	{
+		pNode = (BinareTreeNode*)malloc(sizeof(BinareTreeNode));
+		pNode->elem = elem;
+		printf("%c\n",elem);
+		CreateBinaryTree(pNode->left);
+		CreateBinaryTree(pNode->right);
+	}
 }
 
 void ShowBinaryTree()
-{
-
-}
-
-void InsertBinaryTreeNode()
 {
 
 }
@@ -46,9 +55,8 @@ void DestroyBinaryTree()
 
 int main()
 {
-	BinareTreeNode* pHeadNode = malloc(sizeof(BinareTreeNode));
-	InitBinaryTree();
-	InsertBinaryTreeNode();
+	BinareTreeNode* pHeadNode = NULL;
+	CreateBinaryTree(pHeadNode);
 	SearchBinaryTreeNode();
 	DeleteBinaryTreeNode();
 	ShowBinaryTree();

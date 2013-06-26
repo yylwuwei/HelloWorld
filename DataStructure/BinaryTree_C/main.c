@@ -12,10 +12,15 @@ typedef struct _BinaryTreeNode
 	ElemType elem;
 	struct _BinaryTreeNode* left;
 	struct _BinaryTreeNode* right;
-}BinareTreeNode;
+}BinareTreeNode, *BiTree;
+
+void PrintNode(ElemType elem)
+{
+	printf("%c ", elem);
+}
 
 //First Order Visit to create
-void CreateBinaryTree(BinareTreeNode* pNode)
+BinareTreeNode* PreOrderCreateBinaryTree(BinareTreeNode* pNode)
 {
 	ElemType elem;
 	scanf("%c", &elem);
@@ -27,40 +32,46 @@ void CreateBinaryTree(BinareTreeNode* pNode)
 	{
 		pNode = (BinareTreeNode*)malloc(sizeof(BinareTreeNode));
 		pNode->elem = elem;
-		printf("%c\n",elem);
-		CreateBinaryTree(pNode->left);
-		CreateBinaryTree(pNode->right);
+		//printf("%c\n",elem);
+		pNode->left = PreOrderCreateBinaryTree(pNode->left);
+		pNode->right = PreOrderCreateBinaryTree(pNode->right);
 	}
+	return pNode;
 }
 
-void ShowBinaryTree()
+// void PreOrderCreateBiTree2(BiTree& T)
+// {
+// 	ElemType elem;
+// 	scanf("%c", &elem);
+// 	if ('#' == elem)
+// 	{
+// 		T = NULL;
+// 	}
+// 	else
+// 	{
+// 		T = (BinareTreeNode *)malloc(sizeof(BinareTreeNode));
+// 		T->elem = elem;
+// 		PreOrderCreateBiTree2(T->left);
+// 		PreOrderCreateBiTree2(T->right);
+// 	}
+// }
+
+void PreOrderTraverse(BinareTreeNode* pNode, void(* Visit)(ElemType elem))
 {
-
-}
-
-BOOL SearchBinaryTreeNode()
-{
-	return FALSE;
-}
-
-void DeleteBinaryTreeNode()
-{
-
-}
-
-void DestroyBinaryTree()
-{
-
+	if (NULL != pNode)
+	{
+		Visit(pNode->elem);
+		PreOrderTraverse(pNode->left, PrintNode);
+		PreOrderTraverse(pNode->right, PrintNode);
+	}
 }
 
 int main()
 {
 	BinareTreeNode* pHeadNode = NULL;
-	CreateBinaryTree(pHeadNode);
-	SearchBinaryTreeNode();
-	DeleteBinaryTreeNode();
-	ShowBinaryTree();
-	DestroyBinaryTree();
-	printf("binary tree journey!\n");
+	//ABD##E##C##
+	pHeadNode = PreOrderCreateBinaryTree(pHeadNode);
+	PreOrderTraverse(pHeadNode, PrintNode);
+	printf("\nbinary tree journey!\n");
 	return 0;
 }

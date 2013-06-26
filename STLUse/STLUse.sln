@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SequenceContainer", "SequenceContainer\SequenceContainer.vcproj", "{DBF105D3-2CE4-42ED-BABF-1A3F39C94E6D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AssociativeContainer", "AssociativeContainer\AssociativeContainer.vcproj", "{9E1855EF-531A-44BE-A69D-27B341E27B50}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GenericAlgorithm", "GenericAlgorithm\GenericAlgorithm.vcproj", "{36A34D8E-FE2F-4344-9FA6-2E61615DE50D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBF105D3-2CE4-42ED-BABF-1A3F39C94E6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DBF105D3-2CE4-42ED-BABF-1A3F39C94E6D}.Debug|Win32.Build.0 = Debug|Win32
+		{DBF105D3-2CE4-42ED-BABF-1A3F39C94E6D}.Release|Win32.ActiveCfg = Release|Win32
+		{DBF105D3-2CE4-42ED-BABF-1A3F39C94E6D}.Release|Win32.Build.0 = Release|Win32
+		{9E1855EF-531A-44BE-A69D-27B341E27B50}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9E1855EF-531A-44BE-A69D-27B341E27B50}.Debug|Win32.Build.0 = Debug|Win32
+		{9E1855EF-531A-44BE-A69D-27B341E27B50}.Release|Win32.ActiveCfg = Release|Win32
+		{9E1855EF-531A-44BE-A69D-27B341E27B50}.Release|Win32.Build.0 = Release|Win32
+		{36A34D8E-FE2F-4344-9FA6-2E61615DE50D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{36A34D8E-FE2F-4344-9FA6-2E61615DE50D}.Debug|Win32.Build.0 = Debug|Win32
+		{36A34D8E-FE2F-4344-9FA6-2E61615DE50D}.Release|Win32.ActiveCfg = Release|Win32
+		{36A34D8E-FE2F-4344-9FA6-2E61615DE50D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

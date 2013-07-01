@@ -175,6 +175,18 @@
 				>
 			</File>
 			<File
+				RelativePath=".\MapTest.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\PairTest.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\SetTest.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\stdafx.cpp"
 				>
 				<FileConfiguration
@@ -200,6 +212,18 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
+			<File
+				RelativePath=".\MapTest.h"
+				>
+			</File>
+			<File
+				RelativePath=".\PairTest.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SetTest.h"
+				>
+			</File>
 			<File
 				RelativePath=".\stdafx.h"
 				>

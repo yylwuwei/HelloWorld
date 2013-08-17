@@ -1,0 +1,52 @@
+<html>
+	<head>
+	<title>
+		Biggun Framework Ajax Components Demo
+	</title>
+
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript" src="comp.js"></script>
+	<link rel="stylesheet" id='cssSha' href="fengru_share.css" type="text/css" />
+	<link rel="stylesheet" id='cssGbl' href="fengru_global.css" type="text/css" />	
+	<link rel="stylesheet" id='cssGbl' href="common.css" type="text/css" />	
+	<style>
+		.x-tree ,.x-panel-body{
+			border:0px;
+			margin : 0px;
+			float:left;
+			width:auto;
+			height:auto;
+		}
+	</style>
+</head>
+<body>
+<script>
+var tree = new CTree({title:'hello'});
+tree.root.add(new CTreeItem({title:'hello'}));
+tree.root.add(new CTreeItem({title:'hello'}));
+var fldOne = new CTreeItem({isFolder:true,title:'文件夹1'});
+tree.root.add(fldOne);
+var fldThr = new CTreeItem({isFolder:true,title:'文件夹3'});
+tree.root.add(fldThr);
+var fldTwo = new CTreeItem({isFolder:true,title:'文件夹2'});
+fldOne.add(new CTreeItem({title:'文件1'}));
+fldOne.add(fldTwo);
+fldOne.add(new CTreeItem({title:'文件2'}));
+fldTwo.add(new CTreeItem({title:'文件3'}));
+fldTwo.add(new CTreeItem({title:'文件3'}));
+fldTwo.add(new CTreeItem({title:'文件3'}));
+fldTwo.add(new CTreeItem({title:'文件3'}));
+
+fldThr.add(new CTreeItem({title:'文dddddddddddd件3'}));
+fldThr.add(new CTreeItem({title:'文件3'}));
+fldThr.add(new CTreeItem({title:'文件3'}));
+var fldFor = new CTreeItem({isFolder:true,title:'文件夹4'});
+fldThr.add(fldFor);
+fldFor.add(new CTreeItem({title:'文件3'}));
+fldFor.add(new CTreeItem({title:'文件3'}));
+fldFor.add(new CTreeItem({title:'文件3'}));
+fldFor.add(new CTreeItem({title:'文件3'}));
+document.body.appendChild(tree.view);
+</script>
+</body>
+</html>

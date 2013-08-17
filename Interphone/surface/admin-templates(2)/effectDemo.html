@@ -1,0 +1,38 @@
+<html>
+	<head>
+	<title>
+		Biggun Framework Ajax Components Demo
+	</title>
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript" src="effects.js"></script>
+	<link rel="stylesheet" id='cssGbl' href="common.css" type="text/css" />	
+	<style>
+		#layer {
+			width:80%;
+			height:80px;
+			background-color:#FF6633;
+			color:#FFFFFF;
+			padding : 0px;
+			margin : 0px;
+			border : none;
+			position : absolute;
+		}
+	</style>
+</head>
+<body>
+<div id="layer"></div>
+<div id="outPanel"></div>
+</body>
+<script>
+	//new Effect({element:'layer',fps : 100, duration:0.4}).add(new Opacity({from:0.5,to:1.0})).start();
+	var b = true;
+	var actionFold = new Fold({direction:Effect.RIGHT|Effect.UP,how:'fold'});
+	var op = new Opacity({from:0.1,to:1.0});
+		function next(){
+			new Effect({element:'layer',fps : 100, duration:2.0}).add(new Fold({direction:Effect.LEFT|Effect.DOWN,delta:[0,250,200,0]})).start();
+	}
+	
+	var ff = new Effect({element:'layer',fps : 100, duration:2.0 , onstop : next}).add(actionFold);
+	ff.start();
+</script>
+</html>

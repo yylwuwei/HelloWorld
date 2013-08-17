@@ -1,0 +1,73 @@
+<html>
+	<head>
+	<title>
+		Biggun Framework Ajax Components Demo
+	</title>
+
+	<script type="text/javascript" src="common.js"></script>
+	<script type="text/javascript" src="comp.js"></script>
+	<link rel="stylesheet" id='cssSha' href="fengru_share.css" type="text/css" />
+	<link rel="stylesheet" id='cssGbl' href="fengru_global.css" type="text/css" />	
+</head>
+<body>
+<script>
+var editorMenu = new CMenu();
+editorMenu.add(new CMenuItem({title:'文件'}));
+editorMenu.add(new CMenuItem({title:'编辑'}));
+editorMenu.add(new CMenuItem({title:'方案'}));
+editorMenu.add(new CMenuItem({title:'视图'}));
+editorMenu.add(new CMenuItem({title:'脚本'}));
+
+//File
+var fileMenu = new CMenu();
+fileMenu.add(new CMenuItem({title:'新建'}));
+fileMenu.add(new CMenuItem({title:'打开'}));
+fileMenu.add(new CMenuItem({title:'保存'}));
+fileMenu.add(new CMenuItem({title:'另存为'}));
+
+//Edit
+var editMenu = new CMenu();
+editMenu.add(new CMenuItem({title:'撤消'}));
+editMenu.add(new CMenuItem({title:'复制'}));
+editMenu.add(new CMenuItem({title:'粘贴'}));
+editMenu.add(new CMenuItem({title:'选择范围'}));
+//Solution
+var soluMenu = new CMenu();
+soluMenu.add(new CMenuItem({title:'新建方案'}));
+soluMenu.add(new CMenuItem({title:'打开方案'}));
+soluMenu.add(new CMenuItem({title:'打开TAG方案'}));
+soluMenu.add(new CMenuItem({title:'清理方案'}));
+//view
+var viewMenu = new CMenu();
+viewMenu.add(new CMenuItem({title:'查看方式'}));
+viewMenu.add(new CMenuItem({title:'设置代码页'}));
+viewMenu.add(new CMenuItem({title:'增大字号'}));
+viewMenu.add(new CMenuItem({title:'减小字号'}));
+//脚本
+var scriptMenu = new CMenu();
+scriptMenu.add(new CMenuItem({title:'脚本'}));
+scriptMenu.add(new CMenuItem({title:'脚本列表'}));
+scriptMenu.add(new CMenuItem({title:'执行脚本'}));
+scriptMenu.add(new CMenuItem({title:'中止脚本'}));
+//第二层
+var hexMenu = new CMenu();
+hexMenu.add(new CMenuItem({title:'十六进制'}));
+hexMenu.add(new CMenuItem({title:'脚本列表'}));
+
+var listMenu = new CMenu();
+listMenu.add(new CMenuItem({title:'List'}));
+listMenu.add(new CMenuItem({title:'Something'}));
+editorMenu.attach(fileMenu,0);
+editorMenu.attach(editMenu,1);
+editorMenu.attach(soluMenu,2);
+editorMenu.attach(viewMenu,3);
+editorMenu.attach(scriptMenu,4);
+editorMenu.showMenu(25,25);
+//
+fileMenu.attach(hexMenu,0);
+//
+hexMenu.attach(listMenu,1);
+</script>
+</body>
+</html>
+

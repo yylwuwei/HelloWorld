@@ -1,0 +1,203 @@
+.clearfix {
+	display:block;
+}
+
+.important_txt {
+	font-size:13px;
+	font-weight:bold;
+}
+
+
+.ctxPane table {
+	width:100%;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+
+.ctxPane table tr {
+	height : 30px;
+}
+
+/**
+ * Float tip
+ */
+.important_tip {
+	font-size:13px;
+	font-weight:bold;
+	width:280px;
+	position : absolute;
+}
+
+.important_tip .bdy {
+	background-color:#FEFFCF;
+	border : 1px solid #CCC;
+	border-bottom : 1px solid #FFCC33;
+}
+
+.important_tip .important_txt {
+	color:#391800;
+	padding:2pt 10px 8px;
+}
+
+.important_tip .important_subtxt {
+	font-size:11px;
+	font-weight:normal;
+	margin:0px;
+	padding:0pt 10px 10px;
+}
+
+.important_tip .btm_cap {
+	background:url(msg_cap.gif) no-repeat scroll 0%;
+	height:18px;
+	margin-top : -1px;
+}
+	
+	
+/**Tree Component*/
+
+.x-tree-node {
+	font-family:arial,tahoma,helvetica,sans-serif;
+	font-size:11px;
+	font-size-adjust:none;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height:normal;
+	white-space:nowrap;
+}
+
+.x-tree-node-el {
+	cursor:pointer;
+	line-height:18px;
+}
+
+.x-unselectable, .x-unselectable * {
+	-moz-user-select:none;
+}
+
+.x-tree-lines .x-tree-elbow-end-minus {
+	background-image:url(elbow-end-minus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-end-plus {
+	background-image:url(elbow-end-plus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-plus {
+	background-image:url(elbow-plus.gif);
+}
+
+.x-tree-lines .x-tree-elbow-minus {
+	background-image:url(elbow-minus.gif);
+}
+
+.x-tree-lines .x-tree-elbow {
+	background-image:url(elbow.gif);
+}
+
+.x-tree-lines .x-tree-elbow-end{
+	background-image:url(elbow-end.gif);
+}
+
+.x-tree-lines .x-tree-elbow-line {
+	background-image:url(elbow-line.gif);
+}
+
+.x-tree-elbow-plus, .x-tree-elbow-minus, .x-tree-elbow-end-plus, .x-tree-elbow-end-minus {
+	cursor:pointer;
+}
+
+.x-tree-node-expanded .x-tree-node-icon {
+	background:transparent url(folder-open.gif) repeat scroll 0%;
+}
+.x-tree-node-expanded .x-tree-node-icon {
+	background-image:url(folder-open.gif);
+}
+
+.folder .x-tree-node-icon {
+	background:transparent url(folder.gif) repeat scroll 0%;
+}
+
+.x-tree-node-collapsed .x-tree-node-icon {
+	background-image:url(folder.gif);
+}
+
+.x-tree-node-leaf .x-tree-node-icon {
+	background-image:url(leaf.gif);
+}
+
+.x-tree-icon, .x-tree-ec-icon, .x-tree-elbow-line, .x-tree-elbow, .x-tree-elbow-end, .x-tree-elbow-plus, .x-tree-elbow-minus, .x-tree-elbow-end-plus, .x-tree-elbow-end-minus {
+	background-repeat:no-repeat;
+	border:0pt none;
+	height:18px;
+	margin:0pt;
+	padding:0pt;
+	vertical-align:top;
+	width:16px;
+}
+
+.x-tree-node-collapsed .x-tree-node-icon, .x-tree-node-expanded .x-tree-node-icon, .x-tree-node-leaf .x-tree-node-icon {
+	background-position:center;
+	background-repeat:no-repeat;
+	border:0pt none;
+	height:18px;
+	margin:0pt;
+	padding:0pt;
+	vertical-align:top;
+	width:16px;
+}
+
+.x-tree a,.x-tree a:hover{
+	outline-color:invert;
+	outline-style:none;
+	outline-width:0pt;
+	text-decoration:none;
+}
+
+.x-tree-node a span{
+	color:black;
+	padding:1px 3px 1px 2px;
+	text-decoration:none;
+}
+
+.x-panel-bwrap {
+	overflow:hidden;
+}
+
+.x-tree .x-panel-body {
+	background-color:#FFFFFF;
+}
+
+.x-panel-body-noheader, .x-panel-mc .x-panel-body {
+	border-top:1px solid #99BBE8;
+}
+
+/**重设高度可进行缩放*/
+.x-panel-body {
+	background:white none repeat scroll 0%;
+	border:none;
+	over-flow:auto;
+	height:auto;
+	position:relative;
+}
+
+.x-tree-node .x-tree-node-over {
+	background-color:#EEEEEE;
+}
+
+.x-tree-node .x-tree-selected {
+	background-color:#D9E8FB;
+}
+
+/**View Port*/
+
+.x-viewport {
+	position : absolute;
+	border:none;
+	padding:0;
+	margin : 0px;
+	display : block;
+	height : 0px;
+	width : 0px;
+	over-flow : hidden;
+}

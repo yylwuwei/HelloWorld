@@ -1,0 +1,172 @@
+﻿/*----字体大小颜色 start----*/
+body,td,p,li,select,input,div,table,ul,li,h1,h2,h3{font-size:12px; font-family:Verdana, Arial, Helvetica, sans-serif,"宋体"}
+
+a{ text-decoration:none; color:#0562B6}/*邮箱框架内的链接统一深绿色*/
+a:hover{ text-decoration:underline}
+
+.udl{ text-decoration:underline} /*下划线字体*/
+.fbd,.addNone,.addPDetailT{ font-weight:bold}/*加粗字体*/
+.fnm{ font-weight:normal}/*正常字体*/
+
+
+
+.gUmsg a,.tLnk,.tLnk a
+{ color:#134B00}/*邮箱框架外的链接统一深绿色*/
+a.gfName{color:#3E6444}/*标题深绿1*/
+.gTab table td.bdy,.autofinish td b
+{color:#59814C}/*非聚焦标签文字灰绿色*/
+
+.fgn,.addCntLine,.ibxInfoT,.addITitle2,.addPDetailT{color:#278137}/*通讯录默认分组字体绿色*/
+
+.fred{color:#f00}/*红色提醒字体*/
+
+.fol_title_tr td{ color:#020}/*文件夹页面表格头部-绿色*/
+.fol_title{ color:#333}/*文件夹标头-深灰*/
+tr.fol_tr_on{ background-color:#FDFAE8;}/*文件夹鼠标触及背景-黄色*/
+td.Fol_Tu a,td.Fol_Tu a:hover{ color:#C00}/*未读邮件链接颜色-红色*/
+td.Fol_Tds a,td.Fol_Tds a:hover{ color:#0562B6}/*操作链接颜色-蓝色*/
+
+
+.rmMsgtb th,.ibxTag th,.addTitleN_t,.ibxView,.addInfo,.addNone,.addTd1,.addInfoTbNTitle,.ibxTagT2,.nmAlert{color:#666}/*读信页面左边部分题头字体颜色*/
+
+.fgy,.addTd2,.addITxt{color:#7A8180}/*添加联系人table左边部分灰度颜色*/
+
+/*loading文字*/
+.loading a{ color:#7CAE79}
+.ld_mian h3{color:#16761C}
+.ld_mian h3 p{color:#848484}
+.ld_mian h3 p a{color:#598E55}
+
+
+/*----字体大小颜色 end----*/
+
+
+/*----背景+边框颜色 start----*/
+.btnFnt{background-color:#F8FFF0; border-color:#84A567}
+.btnFntOn{background-color:#FFF; border-color:#BE950B}
+.gIpt,.gIptOn,.gSipt{ border-color:#769744}
+.cmpOpt,td.cmfAll,.autofinish{ background-color:#F5FBF0; border-color:#C9D6C5}
+.rmMsgtb th{ background-color:#F6FDF2}/*读信页面左边部分题头字体颜色*/
+.gMenuOpt a{ color:#333; border-color:#F3FCF4}/*下拉菜单*/
+	.gMenu .bdy{background-color:#F3FCF4; border-color:#81C28A}
+	.gMenu{ border-color:#FFF;background-color:#BECBBC}
+	.spline{ border-top:1px solid #81C28A}
+
+.gSusBdy .row2{border-top:1px solid #C9DCBE;border-bottom:1px solid #C9DCBE; background-color:#F9FDF7}
+	.gSaddNew{border-color:#B7CDB9;color:#577A52}
+
+.ibxMS1,a.addGroupList:hover { background-color:#FDFAE8}/*鼠标移上去背景颜色*/
+a.addGroupList:hover,.addGroupList2,.ibxView,.addInfo,.addNone,.addCntTitle,.nmAlert{border-bottom:1px solid #ECE5C7; border-top:1px solid #ECE5C7}/*鼠标移上去边框颜色*/
+.ibxView,.nmAlert,.addInfo{border-top:0}
+
+.ibxView,.addInfo,.addNone,.nmAlert,.dragDiv{background-color:#FFFDD7}/*提示信息--黄色*/
+
+.addSearchInp,.dragDiv{border:1px solid #C2C8BF} /*快速搜索联系人边框*/
+
+.addTI,.addTI2{border:1px solid #A7A6AA}/*添加联系人输入边框*/
+
+.addITitleBg,.addCInfo,.addGInfo{background-color:#F8FCF6}/*右边部分题头背景*/
+
+.ibxTag{background-color:#FAFAFA; border-bottom:1px solid #F0F0F0}
+
+.ibxAD,.ibxDate{border-bottom:1px solid #efefef}/*邮件列表广告底部细线*/
+
+.ibxTagD{ border-bottom:2px solid #cdd8bd}/*分栏读信拖动条样式*/
+
+.addGL1{PADDING-BOTTOM: 10px; BORDER-BOTTOM: #ccc 1px dashed}/*添加联系组分割条*/
+
+.addViewCTB{background-color:#F9FDF7}/*快速查看联系人背景颜色*/
+
+.ld_mian{border:1px solid #7DB978}/*登录loading的border*/
+.gSev_color{background-color:#F8FCF7}/*邮箱服务页面鼠标触及的绿色*/
+.fol_rate{background-color:#ACC9AA}/*邮箱容量条背景色*/
+
+/*----背景+边框颜色 end----*/
+
+
+/*----欢迎页面颜色 start----*/
+.gWel_info_td{border-right:#C8E9B4 1px solid}/*顶部左侧表格右边框绿色*/
+	.Notice_Nu{color:#900; font-weight:bold}/*欢迎页面红色数字*/
+	
+.gWel_date,.gWel_WeaMain_Tweaword,.gWel_Tomo_Wea div,.gWel_user,.gWel_user .gWel_hi_Cji a,.gWel_user a{ color:#124313}/*欢迎页面顶部非链接颜色*/
+.gWel_Inbox a,.gWel_WeaMain_Tweaword .D_C a{color:#333;text-decoration:none}/*欢迎页面顶端链接颜色*/
+.gWel_Inbox a:hover,.gWel_WeaMain_Tweaword .D_C a:hover{color:#000;text-decoration:none}
+
+
+.wel_Main{}
+	.txt1 a{ color:#333;text-decoration:none}
+	.txt1 a:hover{ color:#000}
+	.txt1 h3 a{color:#1D671F; text-decoration:none}
+	.txt1 h3 a:hover{color:#1D671F}
+	.txt1{background-color:#F2F7F0}
+	.wel_Mtab{background-color:#FFF}/*TAB推广区*/
+	.wel_Mtab_head{background-color:#f3f3f3}
+	.wel_inbox,.wel_inbox a{color:#647B48}
+	.web_rb{color:#ba0001; font-weight:bold}
+		.wel_Mt_0{color:#969696}
+		.wel_Mt_1,.wel_Mt_2{color:#759347}
+	.wel_i_bg{background-color:#A8C29F}
+	.wel_Ma300x260{background-color:#e4e4e4}/*右上广告*/
+	.wel_Ma460x110{background-color:#F3F8FC;border:1px solid #d0d0d0}/*左下广告*/
+			.wel_Ma460x110txt{ color:#828282}
+			.wel_Ma460x110txt h3{ font-size:14px; color:#4C6A8D}
+	.wel_Ma300x110{ border:1px solid #d0d0d0}/*右下广告*/
+	.w_jifen a{color:#2A4904}
+	.wel_if_set{border:1px solid #d4dbd1}
+a.a_kefu{ text-decoration:none; color:#828282; font-family:"宋体"}
+a.a_kefu:hover{ text-decoration:none; color:#333}	
+	
+.usrMsg{left:170px}
+
+.sysWin2{border-color:#ACB3AC}
+.sysWin2 a{color:#060}
+
+/*----欢迎页面颜色 end----*/
+
+/*----背景图 start----*/
+/*框架1 主色系非横向平铺*/
+.bgF1,body.gPage,a.srhBtn,a.AdsrhBtn,a.gCmBtn,a.gWmBtn,.gfTit,a.btnCls2,a.clsFd,a.opnFd,a.addFd,a.addFd2,.gFdBdy li.on,.gTab table td.tLe,.gTab table td.tRi,a.TabCls,.btnDrop,a.addfile,a.addfile0,.sysWin h2 .fLe,.sysWin h2 .fRi,.sysWin div.bdy,.sysWin .bot .fLe,.sysWin .bot .fRi,.sysWin .icoSw,.CtrlBtn,.CtrlBtn2,.clsBar,.expBar,li.barLine,.addLine,a.EptFd,.icoClear,.icoOK,.lo1,.lo2,.btnCls4,.btnExp3,.closeCmpLst,.gMenuOpt .opt1,.cmLogo
+{ background-image:url(fengru/f1.gif); background-repeat:no-repeat}
+
+/*框架2 主色系横向平铺*/
+.bgF2,.tLnk,.gSipt,.gTab table td,.gTab table.on,.gTlBar,.btnFnt,.btnFntOn,.cmp_lst_page h2,.sysWin h2,.sysWin div.bot,.ibxListH,.fol_top,.fol_title_tr td,.fol_rate_all,.rmMsgtbTop,.addTitleN,.addTitleN2,.addSearchInp,.gWel_table,.addViewHover,.addCntTitle,.addCntTitle2,.addFooter,.addPage,.ibxTagBG,.gOpt_gTitle .Tp,.gOpt_mTitle,.gOpt_Ctrl,.mT_Idx,.gWel_TopRit,.ibxInfo,.gIframe4,.fol_title_tr td,.cmp_main,.addGroupLT,.addEnd,.sysWin2 .inner
+{ background-image:url(fengru/f2.gif);background-repeat:repeat-x}
+
+/*框架3 非主色系*/
+.bgF3,a.btnCls,.addFd,.gFdBdy li.on,.bLe,.bRi,.gTab table.on a.TabCls,.gTlBar .on,a.TabCls:hover,.gTlBar .click,a.btnCls3,.icoIfo,.fol_rate_ready,.ibxMS2,.rmsTip,.addGroupList2,.gMenuOpt .sub
+{ background-image:url(fengru/f3.gif)}
+
+/*图标标识背景*/
+.icos,.btnS,.gTlBar .bIco,td.icoNdf,td.icoLcf,.icoEditCnt,.icoDelCnt,.btnSent,.icoPhone,b.mbm,a.mbm,.btnCntOpen,.btnCntCls,.ibxTagOpen,.ibxTagCls,.ibxAddCnt,.ibxNewWin,.rmAddCnt,.rmAddRef,.gOpt_mTitle .Ico,.ibxAddRef,.ibxRe,.ibxFw,.btnNxt,.btnPre,.icoSearch,.icoAG,.icoAU,.addDown,.addUp
+{ background-image:url(fengru/ico.gif); background-repeat:no-repeat}
+
+/*数据加载中gif*/
+.gSLoading
+{ background-image:url(fengru/loading_16x16.gif); background-repeat:no-repeat;}
+
+/*loading*/
+.loading,.ld_head,.ld_head b,.ld_mian{background-image:url(fengru/loading_body_theme.gif)}
+.ld_mian h3{background-image:url(fengru/loading.gif)}
+.loading_botAd{background-image:url(fengru/loading_bottxt.gif)}
+
+
+/*附件文件类型背景*/
+.fileIcos{ background-image:url(file_icon.gif); background-repeat:no-repeat}
+
+/*欢迎页面 积分等图标*/
+.Wel_rl,.Wel_rl_0,.w_jf_bg,b.jf_0,b.jf_1,b.jf_2,b.jf_3,b.jf_4,b.jf_5,b.jf_6,.if4_sev_Main,.if4Ico,.wel_Ma460x110img,.wel_Mtab_head,.wel_Mt_1,.Wel_rl,.Wel_rl_0,.iconInbox
+{background-image:url(fengru/wel_2.gif); background-repeat:no-repeat}
+
+
+/*----背景图 end----*/
+
+/*----选项----*/
+.gOpt_gTitle .Tp{color:#3E6444}
+	.gOpt_mTitle{color:#3E6444; background-color:#FAFEF6; border-top:1px solid #DEE9CE; border-bottom:1px solid #DEE9CE}
+.gOpt_mContent td.ErrorTxt{color:#CC0000}
+.gOpt_Idx_m{border:1px solid #DEE9CE}
+div.mT_Idx{color:#3E6444; background-color:#FAFEF6; border-bottom:1px solid #DEE9CE}
+.gOpt_Ctrl{background-color:#FBFBFB; border-top:1px solid #eee; border-bottom:1px solid #eee}
+.mC_Idx{font-family:"宋体"}
+.mC_Idx a:link,.mC_Idx a:visited,.mC_Idx a:hover{color:#134B00}
+.eLst_mCon .On{background-color:#F3FFEB}

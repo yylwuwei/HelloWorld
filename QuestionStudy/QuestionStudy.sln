@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IncludeStudy", "IncludeStud
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GtestStudy", "GtestStudy\GtestStudy.vcproj", "{D471D358-D0A1-48FC-A618-4A4AAC1A1741}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCStudy", "MFCStudy\MFCStudy.vcproj", "{E256F502-F8F2-4E8D-AA21-809BA7CF3503}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{D471D358-D0A1-48FC-A618-4A4AAC1A1741}.Debug|Win32.Build.0 = Debug|Win32
 		{D471D358-D0A1-48FC-A618-4A4AAC1A1741}.Release|Win32.ActiveCfg = Release|Win32
 		{D471D358-D0A1-48FC-A618-4A4AAC1A1741}.Release|Win32.Build.0 = Release|Win32
+		{E256F502-F8F2-4E8D-AA21-809BA7CF3503}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E256F502-F8F2-4E8D-AA21-809BA7CF3503}.Debug|Win32.Build.0 = Debug|Win32
+		{E256F502-F8F2-4E8D-AA21-809BA7CF3503}.Release|Win32.ActiveCfg = Release|Win32
+		{E256F502-F8F2-4E8D-AA21-809BA7CF3503}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

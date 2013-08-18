@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCStudy", "MFCStudy\MFCStu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Win32Study", "Win32Study\Win32Study.vcproj", "{90F87C05-206A-4CFF-94CB-96F3BB9B5C0A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCDlgStudy", "MFCDlgStudy\MFCDlgStudy.vcproj", "{AAE821C5-CF17-4F24-9EE0-2BC0A077B88A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -31,6 +33,10 @@ Global
 		{90F87C05-206A-4CFF-94CB-96F3BB9B5C0A}.Debug|Win32.Build.0 = Debug|Win32
 		{90F87C05-206A-4CFF-94CB-96F3BB9B5C0A}.Release|Win32.ActiveCfg = Release|Win32
 		{90F87C05-206A-4CFF-94CB-96F3BB9B5C0A}.Release|Win32.Build.0 = Release|Win32
+		{AAE821C5-CF17-4F24-9EE0-2BC0A077B88A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AAE821C5-CF17-4F24-9EE0-2BC0A077B88A}.Debug|Win32.Build.0 = Debug|Win32
+		{AAE821C5-CF17-4F24-9EE0-2BC0A077B88A}.Release|Win32.ActiveCfg = Release|Win32
+		{AAE821C5-CF17-4F24-9EE0-2BC0A077B88A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

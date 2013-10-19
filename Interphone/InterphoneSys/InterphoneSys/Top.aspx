@@ -10,13 +10,25 @@
 <body>
     <table cellspacing="0" cellpadding="0" width="100%" background="images/header_bg.jpg"
         border="0">
-        <tr height="56">
-            <td width="260">
-                <img height="56" src="images/header_left.jpg" width="260">
+        
+        <tr height="56px">
+            <td width="260" line-height="1px" >
+                 <img line-height="1px" display="block"; height="56" src="images/header_left.jpg" width="260">
             </td>
-            <td style="font-weight: bold; color: #fff; padding-top: 20px" align="middle">
+            <td style="font-weight: bold; color: #fff; padding-top: 0px" align="middle">
+                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                    <tr>
+                        <td>
+                        &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="middle">
                 当前用户：admin &nbsp;&nbsp; <a style="color: #fff" href="" target="main">修改口令</a> &nbsp;&nbsp;
-                <a style="color: #fff" onclick="parent.location.href='login.aspx';" href="">退出系统</a>
+                <a style="color: #fff" onclick="parent.location.href='login.aspx';" href="">退出系统</a>                        
+                        </td>
+                    </tr>
+                </table>
             </td>
             <td align="right" width="268">
                 <img height="56" src="images/header_right.jpg" width="268">

@@ -6,14 +6,17 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <link href="css/admin.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+    img{ display:block; }
+    </style>
 </head>
 <body>
     <table cellspacing="0" cellpadding="0" width="100%" background="images/header_bg.jpg"
         border="0">
         
         <tr height="56px">
-            <td width="260" line-height="1px" >
-                 <img line-height="1px" display="block"; height="56" src="images/header_left.jpg" width="260">
+            <td width="260" height="56px" >
+                 <img height="56px" src="images/header_left.jpg" width="260">
             </td>
             <td style="font-weight: bold; color: #fff; padding-top: 0px" align="middle">
                 <table border="0" cellspacing="0" cellpadding="0" width="100%">

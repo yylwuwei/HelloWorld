@@ -6,6 +6,9 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
     <link href="css/admin.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+    td{text-align:left;}
+    </style>
 
     <script language="javascript">
         function expand(el) {
@@ -23,7 +26,7 @@
 
 </head>
 <body>
-    <table height="860px" cellspacing="0" cellpadding="0" width="170" background="images/menu_bg.jpg"
+    <table height="850px" cellspacing="0" cellpadding="0" width="150px" background="images/menu_bg.jpg"
         border="0">
         <tr>
             <td valign="top" align="middle">
@@ -35,8 +38,8 @@
                 </table>
                 <table cellspacing="0" cellpadding="0" width="150" border="0">
                     <tr height="22">
-                        <td style="padding-left: 30px" background="images/menu_bt.jpg">
-                            <a class="menuParent" onclick="expand(1)" href="javascript:void(0);">系统监控</a>
+                        <td style="padding-left: 30px" background="images/menu_bt.jpg" onclick="expand(1)">
+                            <a class="menuParent"  href="javascript:void(0);">系统监控</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -77,8 +80,8 @@
                 </table>
                 <table cellspacing="0" cellpadding="0" width="150" border="0">
                     <tr height="22">
-                        <td style="padding-left: 30px" background="images/menu_bt.jpg">
-                            <a class="menuParent" onclick="expand(2)" href="javascript:void(0);">基站管理</a>
+                        <td style="padding-left: 30px" background="images/menu_bt.jpg" onclick="expand(2)">
+                            <a class="menuParent" href="javascript:void(0);">基站管理</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -127,8 +130,8 @@
                 </table>
                 <table cellspacing="0" cellpadding="0" width="150" border="0">
                     <tr height="22">
-                        <td style="padding-left: 30px" background="images/menu_bt.jpg">
-                            <a class="menuParent" onclick="expand(3)" href="javascript:void(0);">系统管理</a>
+                        <td style="padding-left: 30px" background="images/menu_bt.jpg" onclick="expand(3)">
+                            <a class="menuParent" href="javascript:void(0);">系统管理</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -161,8 +164,8 @@
                 </table>
                 <table cellspacing="0" cellpadding="0" width="150" border="0">
                     <tr height="22">
-                        <td style="padding-left: 30px" background="images/menu_bt.jpg">
-                            <a class="menuParent" onclick="expand(4)" href="javascript:void(0);">用户管理</a>
+                        <td style="padding-left: 30px" background="images/menu_bt.jpg" onclick="expand(4)">
+                            <a class="menuParent" href="javascript:void(0);">用户管理</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -195,8 +198,8 @@
                 </table>
                 <table cellspacing="0" cellpadding="0" width="150" border="0">
                     <tr height="22">
-                        <td style="padding-left: 30px" background="images/menu_bt.jpg">
-                            <a class="menuParent" onclick="expand(5)" href="javascript:void(0);">日志帮助</a>
+                        <td style="padding-left: 30px" background="images/menu_bt.jpg" onclick="expand(5)">
+                            <a class="menuParent" href="javascript:void(0);">日志帮助</a>
                         </td>
                     </tr>
                     <tr height="4">

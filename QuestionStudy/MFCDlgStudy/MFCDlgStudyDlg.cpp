@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "MFCDlgStudy.h"
 #include "MFCDlgStudyDlg.h"
+#include "KDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -61,6 +62,7 @@ void CMFCDlgStudyDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CMFCDlgStudyDlg, CDialog)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
+	ON_COMMAND(ID_HELP, OnHelp)
 	ON_WM_QUERYDRAGICON()
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
@@ -137,9 +139,13 @@ void CMFCDlgStudyDlg::OnPaint()
 
 		// Draw the icon
 		dc.DrawIcon(x, y, m_hIcon);
+
+		dc.TextOut(0,0, _T("hello"));
 	}
 	else
 	{
+		CDC* pDC = GetDC();
+		pDC->TextOut(0,0, _T("hello"));
 		CDialog::OnPaint();
 	}
 }
@@ -151,3 +157,79 @@ HCURSOR CMFCDlgStudyDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+#define IDD_SIMPLEDIALOG 201
+
+BOOL CMFCDlgStudyDlg::PreTranslateMessage(MSG* pMsg)
+{
+	HINSTANCE hinst = GetModuleHandle(_T("MFCDlgStudy.exe"));
+	if (pMsg->message == WM_KEYDOWN)
+	{
+		if (pMsg->wParam == VK_F1)
+		{
+			//MessageBox(_T("F1 key down"));
+			
+
+			HWND hwnd; 
+			hwnd = CreateWindow( 
+				_T("BUTTON"),        // name of window class 
+				_T("Hello,Subwnd"),            // title-bar string 
+				WS_CHILD |WS_VISIBLE, // top-level window 
+				0,       // default horizontal position 
+				0,       // default vertical position 
+				200,       // default width 
+				200,       // default height 
+				(HWND) GetSafeHwnd(),         // no owner window 
+				(HMENU) NULL,        // use class menu 
+				hinst,           // handle to application instance 
+				(LPVOID) NULL);      // no window-creation data 
+			if (!hwnd) 
+			{
+				int errCode = GetLastError();
+				return FALSE; 
+			}
+			ShowWindow(SW_SHOW);
+			UpdateWindow();
+		}
+		else if (pMsg->wParam == VK_F2)
+		{
+//			MessageBox(_T("F2 key down"));
+
+			//m_pSimpleDialog initialized to NULL in the constructor of CMyDialog class
+			CAboutDlg* m_pSimpleDlg = new CAboutDlg();
+			//Check if new succeeded and we got a valid pointer to a dialog object
+			if(m_pSimpleDlg != NULL)
+			{
+				BOOL ret = m_pSimpleDlg->Create(IDD_ABOUTBOX, this);
+				if(!ret)   //Create failed.
+					AfxMessageBox(_T("Error creating Dialog"));
+				m_pSimpleDlg->ShowWindow(SW_SHOW);
+			}
+			else
+			{
+				AfxMessageBox(_T("Error Creating Dialog Object"));
+			}
+		}
+		else if (pMsg->wParam == VK_F3)
+		{
+			CAboutDlg* m_pSimpleDlg = new CAboutDlg();
+			m_pSimpleDlg->DoModal();
+			return TRUE;
+		}
+		else if (pMsg->wParam == VK_F4)
+		{
+			KDialog dlg(hinst,(HWND) GetSafeHwnd());  
+			dlg.DoModal();  
+		}
+		else if (pMsg->wParam == VK_F5)
+		{
+// 			CWnd wnd;
+// 			BOOL b=wnd.CreateEx (ExStyle, ClassName, WindowName, Style, x, y, Width, Height, Parent, Menu,P a r a m ) ;
+		}
+	}	
+	return CDialog::PreTranslateMessage(pMsg);
+}
+
+void CMFCDlgStudyDlg::OnHelp()
+{
+	return;
+}

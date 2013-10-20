@@ -17,7 +17,7 @@
         }
         #mytable
         {
-            width: 700px;
+            width: 100%;
             padding: 0;
             margin: 0;
         }
@@ -28,9 +28,13 @@
             font: italic 11px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
             text-align: right;
         }
+        tr
+        {
+            height:30px;	
+        }
         th
         {
-            font: bold 11px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
+            font: bold 20px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
             color: #4f6b72;
             border-right: 1px solid #C1DAD7;
             border-bottom: 1px solid #C1DAD7;
@@ -53,9 +57,9 @@
             border-right: 1px solid #C1DAD7;
             border-bottom: 1px solid #C1DAD7;
             background: #fff;
-            font-size: 11px;
+            font-size: 15px;
             padding: 6px 6px 6px 12px;
-            color: #4f6b72;
+            color: #000000;
         }
         td.alt
         {
@@ -67,30 +71,42 @@
             border-left: 1px solid #C1DAD7;
             border-top: 0;
             background: #fff url(images/bullet1.gif) no-repeat;
-            font: bold 10px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
+            font: bold 15px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
         }
         th.specalt
         {
             border-left: 1px solid #C1DAD7;
             border-top: 0;
             background: #f5fafa url(images/bullet2.gif) no-repeat;
-            font: bold 10px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
+            font: bold 15px "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
             color: #797268;
         }
         /*---------for IE 5.x bug*/
         html > body td
         {
-            font-size: 11px;
+            font-size: 12px;
         }
+        
+        #divContainer{margin:0px auto; width:100%;}
+        #divTitle{height:70px; margin-left:30px; margin-top:0px; }
+        #divContent{height:500px; margin-left:30px; margin-top:0px; }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <table id="Table1" cellspacing="0" summary="The technical specifications of the Apple PowerMac G5 series">
+    <div id="divContainer">
+     
+    <div id="divTitle">
+    <h1>告警信息查看</h1>
+    <hr />
+    </div>
+    <div id="divContent">
+    
+  
+            <table id="mytable" cellspacing="0" summary="The technical specifications of the Apple PowerMac G5 series">
             <caption>
             </caption>
-            <tr>
+            <tr height="35px">
                 <th scope="col" abbr="Configurations">
                     基站名称
                 </th>
@@ -105,9 +121,9 @@
                 </th>
             </tr>
             <tr>
-                <th scope="row" abbr="Model" class="spec">
+                <td>
                     lipeng
-                </th>
+                </td>
                 <td>
                     M9454LL/A
                 </td>
@@ -119,21 +135,35 @@
                 </td>
             </tr>
             <tr>
-                <th scope="row" abbr="G5 Processor" class="specalt">
+                <td>
                     mapabc
-                </th>
-                <td class="alt">
+                </td>
+                <td>
                     Dual 1.8GHz PowerPC G5
                 </td>
-                <td class="alt">
+                <td>
                     Dual 2GHz PowerPC G5
                 </td>
-                <td class="alt">
+                <td>
                     Dual 2.5GHz PowerPC G5
                 </td>
             </tr>
+                        <tr>
+                <td class="alt">
+                    图秀卡
+                </td>
+                <td class="alt">
+                    512K per processor
+                </td>
+                <td class="alt">
+                    512K per processor
+                </td>
+                <td class="alt">
+                    512K per processor
+                </td>
+            </tr>
             <tr>
-                <th scope="row" abbr="Frontside bus" class="spec">
+                <td>
                     地图名片
                 </th>
                 <td>
@@ -146,21 +176,72 @@
                     1.25GHz per processor
                 </td>
             </tr>
+
+
             <tr>
-                <th scope="row" abbr="L2 Cache" class="specalt">
+                <td>
+                    lipeng
+                </td>
+                <td>
+                    M9454LL/A
+                </td>
+                <td>
+                    M9455LL/A
+                </td>
+                <td>
+                    M9457LL/A
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    mapabc
+                </td>
+                <td>
+                    Dual 1.8GHz PowerPC G5
+                </td>
+                <td>
+                    Dual 2GHz PowerPC G5
+                </td>
+                <td>
+                    Dual 2.5GHz PowerPC G5
+                </td>
+            </tr>
+                        <tr>
+                <td >
                     图秀卡
-                </th>
-                <td class="alt">
+                </td>
+                <td >
                     512K per processor
                 </td>
-                <td class="alt">
+                <td >
                     512K per processor
                 </td>
-                <td class="alt">
+                <td >
                     512K per processor
                 </td>
             </tr>
+            <tr>
+                <td>
+                    地图名片
+                </th>
+                <td>
+                    900MHz per processor
+                </td>
+                <td>
+                    1GHz per processor
+                </td>
+                <td>
+                    1.25GHz per processor
+                </td>
+            </tr>
+
+
+
         </table>
+
+    
+    </div>
+    
     </div>
     </form>
 </body>

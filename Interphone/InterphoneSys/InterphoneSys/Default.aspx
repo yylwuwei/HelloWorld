@@ -12,7 +12,7 @@
 </head>
 <frameset border="0" framespacing="0" rows="56px, *" frameborder="0">
 <FRAME name=header src="Top.aspx" frameBorder=0 noResize scrolling=no>
-<FRAMESET cols="170, *">
+<FRAMESET cols="150, *">
 <FRAME name=menu src="LeftMenu.aspx" frameBorder=0 noResize>
 <FRAME name=main src="MapControl.aspx" frameBorder=0 noResize scrolling=yes>
 </FRAMESET>

@@ -1,0 +1,29 @@
+<publishData>
+  <publishTarget publishUrl="D:\MyTestWeb\">
+    <file relUrl="bin/ProtectIndexPage.dll" publishTime="10/14/2013 21:49:43" />
+    <file relUrl="ModleBaidu.aspx" publishTime="10/14/2013 21:59:16" />
+    <file relUrl="Default.aspx" publishTime="10/13/2013 12:26:05" />
+    <file relUrl="bin/ProtectIndexPage.pdb" publishTime="10/14/2013 21:49:43" />
+    <file relUrl="Image/BaiduBtn.jpg" publishTime="10/13/2013 18:20:41" />
+    <file relUrl="ErrorPage.aspx" publishTime="10/13/2013 12:22:46" />
+    <file relUrl="Web.config" publishTime="10/14/2013 19:55:13" />
+  </publishTarget>
+  <publishTarget publishUrl="D:\MyWeb\">
+    <file relUrl="bin/ProtectIndexPage.dll" publishTime="10/14/2013 15:08:13" />
+    <file relUrl="ModleBaidu.aspx" publishTime="10/14/2013 15:05:57" />
+    <file relUrl="Default.aspx" publishTime="10/13/2013 12:26:05" />
+    <file relUrl="Image/BaiduBtn.jpg" publishTime="10/13/2013 18:20:41" />
+    <file relUrl="bin/ProtectIndexPage.pdb" publishTime="10/14/2013 15:08:12" />
+    <file relUrl="ErrorPage.aspx" publishTime="10/13/2013 12:22:46" />
+    <file relUrl="Web.config" publishTime="10/14/2013 15:02:47" />
+  </publishTarget>
+  <publishTarget publishUrl="C:\Users\yylj\Desktop\WebSite\">
+    <file relUrl="bin/ProtectIndexPage.dll" publishTime="10/13/2013 18:18:04" />
+    <file relUrl="ModleBaidu.aspx" publishTime="10/13/2013 18:21:44" />
+    <file relUrl="Default.aspx" publishTime="10/13/2013 12:26:05" />
+    <file relUrl="bin/ProtectIndexPage.pdb" publishTime="10/13/2013 18:18:04" />
+    <file relUrl="Image/BaiduBtn.jpg" publishTime="10/13/2013 18:20:41" />
+    <file relUrl="ErrorPage.aspx" publishTime="10/13/2013 12:22:46" />
+    <file relUrl="Web.config" publishTime="10/13/2013 15:34:22" />
+  </publishTarget>
+</publishData>

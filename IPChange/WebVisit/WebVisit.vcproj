@@ -186,10 +186,6 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
-				RelativePath=".\Common.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\explorer1.cpp"
 				>
 			</File>
@@ -227,10 +223,6 @@
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
-			<File
-				RelativePath=".\Common.h"
-				>
-			</File>
 			<File
 				RelativePath=".\explorer1.h"
 				>
@@ -271,6 +263,26 @@
 			</File>
 			<File
 				RelativePath=".\res\WebVisit.rc2"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Model"
+			>
+			<File
+				RelativePath=".\Common.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Common.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ProxyIP.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ProxyIP.h"
 				>
 			</File>
 		</Filter>

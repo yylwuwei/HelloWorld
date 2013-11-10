@@ -1,0 +1,340 @@
+ <title>我写的谷歌地图测距</title>
+    <link href="../../../App_Themes/Default/Default.css" rel="stylesheet" type="text/css" />
+    <link href="../../CustomTheme/Plugin.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+    
+	<script type="text/javascript"> 
+
+		var bFirst = 1;
+
+        var map;
+        var polyline;
+        var polylinesArray = [];
+
+		var infoWindowArray = [];
+
+        //距离标记数组
+        var lenArray = [];
+        
+        var DefaultLat = 23.16667;
+        var DefaultLng = 113.23333;
+        var DefaultZoom = 1; //默认情况下的zoom
+
+
+
+
+		/**
+ * The HomeControl adds a control to the map that simply
+ * returns the user to Chicago. This constructor takes
+ * the control DIV as an argument.
+ * @constructor
+ */
+function HomeControl(controlDiv, map) {
+
+  // Set CSS styles for the DIV containing the control
+  // Setting padding to 5 px will offset the control
+  // from the edge of the map
+  controlDiv.style.padding = '5px';
+
+  // Set CSS for the control border
+  var controlUI = document.createElement('div');
+  controlUI.style.backgroundColor = 'white';
+  controlUI.style.borderStyle = 'solid';
+  controlUI.style.borderWidth = '2px';
+  controlUI.style.cursor = 'pointer';
+  controlUI.style.textAlign = 'center';
+  controlUI.title = '单击则清除本次测距';
+  controlDiv.appendChild(controlUI);
+
+  // Set CSS for the control interior
+  var controlText = document.createElement('div');
+  controlText.style.fontFamily = 'Arial,sans-serif';
+  controlText.style.fontSize = '12px';
+  controlText.style.paddingLeft = '4px';
+  controlText.style.paddingRight = '4px';
+  controlText.innerHTML = '<b>清除本次测距</b>';
+  controlUI.appendChild(controlText);
+
+  // Setup the click event listeners: simply set the map to
+  // Chicago
+  google.maps.event.addDomListener(controlUI, 'click', function() {
+   deleteOverlays();
+  });
+
+}
+
+        
+        
+        //地图初始化
+        function MapInit(){
+         var singapoerCenter = new google.maps.LatLng(DefaultLat, DefaultLng); //设置中心位置
+         var myOptions = {
+          zoom: DefaultZoom,
+                center: singapoerCenter,
+                navigationControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+          
+         };
+         map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+         //为地图的缩放事件提供
+            google.maps.event.addListener(map, 'zoom_changed', function() {
+                if (this.getZoom() < DefaultZoom) {
+                  CreateMarker(DefaultLat, DefaultLng, DefaultZoom);
+                }
+            });
+
+         getDistance();
+
+		   // Create the DIV to hold the control and
+  // call the HomeControl() constructor passing
+  // in this DIV.
+  var homeControlDiv = document.createElement('div');
+  var homeControl = new HomeControl(homeControlDiv, map);
+
+  homeControlDiv.index = 1;
+  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(homeControlDiv);
+
+
+	 var myLatlng = new google.maps.LatLng(23.16667,113.23333);
+	 
+	 			var rain1="0";
+			var cTime1="2013-10-28 13:45:20";
+		    var hotelName = "我是广州:"+cTime1;
+            var hotelDescription = "GuagnZhou Intelligent Agriculture Laboratory";
+            var hotelImg1 = "http://pic20.nipic.com/20120425/2158798_172748292000_2.jpg";
+            var hotelImg = "http://pic21.nipic.com/20120520/8830844_185002441196_2.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";           
+            var avgPrice = "3";	
+
+	 var contentString = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>广州温度:"+36+"°C<br/>广州温度2:"+36.3+"°C<br/>广州湿度:"+48.1+"%<br/>土广州湿度2:"+47.5+"%<br/>广州光照:"+21522+"Lux<br/>广州降水量:"+rain1+"mm<br/>广州土壤:"+14.1+"g/Kg<br/>广州PH值:"+7.9+
+                "<br/> </td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";
+
+  var infowindow = new google.maps.InfoWindow({
+      content: contentString
+  });
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+
+        }
+
+
+		
+        function CreateMarker(lat, lng, MyGoToCommunityZoom) {
+           
+            var singapoerCenter = new google.maps.LatLng(lat, lng);
+            var myOptions = {
+                zoom: MyGoToCommunityZoom,
+                center: singapoerCenter,
+                navigationControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map.setOptions(myOptions);
+        }
+         
+        //距离
+        function getDistance(){
+         google.maps.event.addListener(map,"click",function(event){
+          addMarker(event.latLng);
+         });
+        }
+         
+        //添加新标记
+        function addMarker(location){
+         if(lenArray.length==0){
+          var icon = "http://b259.photo.store.qq.com/psb?/V12hQgmW13ePD6/Z8f42qJ1d4Eu9Wsgc6Facsirxp2FqpqRJP69*4ZzgV0!/b/dGXbZJrELgAA&bo=GAAoAAAAAAADABU!&rf=photoDetail";
+         }else{
+           
+          if(lenArray.length>=2){
+             marker.setMap(null);
+          }
+          var icon ="http://b259.photo.store.qq.com/psb?/V12hQgmW13ePD6/Z8f42qJ1d4Eu9Wsgc6Facsirxp2FqpqRJP69*4ZzgV0!/b/dGXbZJrELgAA&bo=GAAoAAAAAAADABU!&rf=photoDetail";
+         }
+         //标记选项
+         var myOptions = {
+          position : location,
+          draggable :true,
+          map : map,
+          icon : icon
+         };
+     
+         marker = new google.maps.Marker(myOptions);
+         
+           //双击
+           google.maps.event.addListener(marker,'click',function(){
+				lenArray.push(marker);
+                drawOverlay(marker);
+           });
+           
+           //拖动结束事件
+           google.maps.event.addListener(marker,'dragend',function(){
+			   lenArray.push(marker);
+               drawOverlay(marker);
+			   
+           });
+            
+           lenArray.push(marker);
+           drawOverlay(marker);
+		  
+    }
+        //画出路径覆盖层
+        function drawOverlay(marker){
+        //路线数组
+            var flightPlanCoordinates = [];
+         //
+         //将坐标压入路线数组
+         if (lenArray) {
+          for (i in lenArray) {
+           flightPlanCoordinates.push(lenArray[i].getPosition());
+          }
+         }
+         //路径选项
+         var myOptions = {
+          path : flightPlanCoordinates,
+          map : map,
+          strokeColor : "#FF0000",
+          strokeOpacity : 1.0,
+          strokeWeight : 2
+         };
+         polyline = new google.maps.Polyline(myOptions);
+         //清除原有折线路径
+         if (polylinesArray) {
+          for (i in polylinesArray) {
+           polylinesArray[i].setMap(null);
+          }
+          polylinesArray = [];
+         }
+         polyline.setMap(map);
+         
+        // document.getElementById("sRes").innerHTML =(polyline.getLength()/1000).toFixed(3);
+
+		if(bFirst != 1)
+		{
+			
+
+			var contentString2 = (polyline.getLength()/1000).toFixed(3) + ' km';
+			var infowindow2 = new google.maps.InfoWindow({
+					content: contentString2
+			 });
+			infowindow2.open(map,marker);
+
+			infoWindowArray.push(infowindow2);
+
+			google.maps.event.addListener(infowindow2,"closeclick",function(){ 
+				//alert('hello');
+				//deleteOverlays();
+				//infowindow2.close();
+				//map.closeInfoWindow();
+
+				if (infoWindowArray) {
+					for (i in infoWindowArray) {
+						infoWindowArray[i].close();
+					}
+				infoWindowArray = [];
+				}
+
+			});
+		}
+	
+		bFirst++;
+        
+
+		 polylinesArray.push(polyline);
+        }
+         
+         
+        google.maps.LatLng.prototype.distanceFrom = function(latlng) {
+         var lat = [this.lat(), latlng.lat()]
+         var lng = [this.lng(), latlng.lng()] //var R = 6371; // km (change this constant to get miles)
+         var R = 6378137; // In meters
+         var dLat = (lat[1] - lat[0]) * Math.PI / 180;
+         var dLng = (lng[1] - lng[0]) * Math.PI / 180;
+         var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(lat[0] * Math.PI / 180) * Math.cos(lat[1] * Math.PI / 180) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+         var d = R * c;
+         return Math.round(d);
+        } 
+         
+        google.maps.Marker.prototype.distanceFrom = function(marker) {
+         return this.getPosition().distanceFrom(marker.getPosition());
+        }
+         
+        google.maps.Polyline.prototype.getLength = function() {
+         var d = 0;
+         var path = this.getPath();
+         var latlng;
+         for (var i = 0; i < path.getLength() - 1; i++) {
+          latlng = [path.getAt(i), path.getAt(i + 1)];
+          d += latlng[0].distanceFrom(latlng[1]);
+         }
+         return d;
+        }
+        
+         // 删除所有叠加物 
+         function deleteOverlays() {
+			bFirst = 1;
+            if (lenArray) {
+              for (i in lenArray) {
+                lenArray[i].setMap(null);
+              }
+              lenArray.length = 0;
+            }
+            
+             //清除原有折线路径
+         if (polylinesArray) {
+          for (i in polylinesArray) {
+           polylinesArray[i].setMap(null);
+          }
+          polylinesArray = [];
+         }
+
+		//if (infoWindowArray) {
+		//	for (i in infoWindowArray) {
+		//		infoWindowArray[i].close();
+		//	}
+		//	infoWindowArray = [];
+     	//}
+
+
+
+        //document.getElementById("sRes").innerHTML="0.000";
+          }
+
+
+    </script>
+
+</head>
+<body onload="MapInit()">
+    <div>
+        <div >
+           </div>
+        <div id="search_box" class="search_box">
+            &nbsp;
+        </div>
+        <div id="map" style="width: 900px; height: 500px; position: relative;">
+            <div id="busSearchBox" style="width:300px; height:30px; background:#f00; position: fixed; _position: absolute; top:30px; margin-left:50px; z-index:100;">
+                <span id="Span1" style="margin-bottom: 30px;">
+                   &nbsp;&nbsp;&nbsp; <input type="button" style="display: none;"  id="delMarker" onclick="deleteOverlays();" value="清除本次测距" class="inputBtn" />
+                    &nbsp;&nbsp;&nbsp;<span id="sRes"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

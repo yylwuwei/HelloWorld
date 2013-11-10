@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>谷歌地图测试页面</title>
+
+<script src="http://ditu.google.cn/maps?file=api&amp;v=2&amp;key=ABQIAAAA58vpIHi8AEcfHWueEq4BLRSJt3t2aLAISZrItHaS2UWDsegk1RTtOmD-toWvVYbRfDC4rxCuWaYpKg&sensor=false"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+          var map = new GMap2(document.getElementById("map_canvas"));
+          map.setCenter(new GLatLng(23.16667,113.23333), 8);
+          map.enableScrollWheelZoom();
+          var mapControl = new GMapTypeControl();
+          map.addControl(mapControl);
+          map.addControl(new GLargeMapControl());    
+		  function createHotelMarker(point) {
+             var marker = new GMarker(point);
+             GEvent.addListener(marker, "click", function() {
+             var opts = {pixelOffset:new GSize(32,5), maxWidth:600}; 
+                    marker.openInfoWindowHtml(point.name, opts);
+                });
+                 return marker;
+           }
+        }
+		    //节点1（广州）
+		    var point1 = new GLatLng(23.16667,113.23333);
+			var rain1="0";
+			var cTime1="2013-10-28 13:45:20";
+		    var hotelName = "我是广州:"+cTime1;
+            var hotelDescription = "GuagnZhou Intelligent Agriculture Laboratory";
+            var hotelImg1 = "http://pic20.nipic.com/20120425/2158798_172748292000_2.jpg";
+            var hotelImg = "http://pic21.nipic.com/20120520/8830844_185002441196_2.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";           
+            var avgPrice = "3";	
+			
+            point1.name  = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>广州温度:"+36+"°C<br/>广州温度2:"+36.3+"°C<br/>广州湿度:"+48.1+"%<br/>土广州湿度2:"+47.5+"%<br/>广州光照:"+21522+"Lux<br/>广州降水量:"+rain1+"mm<br/>广州土壤:"+14.1+"g/Kg<br/>广州PH值:"+7.9+
+                "<br/> </td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";                                              
+            map.addOverlay(createHotelMarker(point1));
+			//节点2（佛山）
+			var point2 = new GLatLng(27.6667,103.2500);
+			var rain2="0";
+			var cTime2="2013-10-28 13:45:21";
+		    var hotelName = "金阳 油桐  采样时间:"+cTime2;
+            var hotelDescription = "Hefei Intelligent Agriculture Laboratory";
+            var hotelImg = "http://202.127.200.3/images/jinyan-youtong.jpg";
+            var hotelImg1 = "http://202.127.200.3/sc/images/jinyan-youtongyuan.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";           
+            var avgPrice = "3";	
+			
+            point2.name  = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>环境温度:"+36.2+"°C<br/>土壤温度:"+36+"°C<br/>环境湿度:"+48.1+"%<br/>土壤湿度:"+47.2+"%<br/>光照强度:"+21590+"Lux<br/>降水量:"+rain2+"mm<br/>土壤盐分:"+14.1+"g/Kg<br/>土壤PH值:"+7.9+
+                "<br/> <a href='" + hotelWebAddress + "'>数据查询</a></td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";                                                  
+            map.addOverlay(createHotelMarker(point2));
+			//节点3（冕宁）
+            var point3 = new GLatLng(28.5500,102.1667);
+			var rain3="0";
+			var cTime3="2013-10-28 13:45:21";
+		    var hotelName = "冕宁 枇杷  采样时间:"+cTime3;
+            var hotelDescription = "Hefei Intelligent Agriculture Laboratory";
+            var hotelImg = "http://202.127.200.3/images/miannin-pipa.jpg";
+            var hotelImg1 = "http://202.127.200.3/sc/images/miannin-pipayuan.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";          
+            var avgPrice = "3";	
+			
+            point3.name  = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>环境温度:"+36.1+"°C<br/>土壤温度:"+36.2+"°C<br/>环境湿度:"+48.9+"%<br/>土壤湿度:"+47.9+"%<br/>光照强度:"+21500+"Lux<br/>降水量:"+rain3+"mm<br/>土壤盐分:"+14+"g/Kg<br/>土壤PH值:"+7.8+
+                "<br/> <a href='" + hotelWebAddress + "'>数据查询</a></td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";                                                  
+            map.addOverlay(createHotelMarker(point3));
+			
+			
+			//节点4（西昌）
+			var point4 = new GLatLng(27.7500,102.3333);
+			var rain4="0";
+			var cTime4="2013-10-28 13:45:20";
+		    var hotelName = "西昌北河基地 油橄榄苗  采样时间:"+cTime4;
+            var hotelDescription = "Hefei Intelligent Agriculture Laboratory";
+            var hotelImg = "http://202.127.200.3/images/xichang-youganlan.jpg";
+            var hotelImg1 = "http://202.127.200.3/images/xichang-youganlanyuan.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";           
+            var avgPrice = "3";	
+			
+            point4.name  = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>环境温度:"+37.2+"°C<br/>土壤温度:"+35.9+"°C<br/>环境湿度:"+46.1+"%<br/>土壤湿度:"+46+"%<br/>光照强度:"+21587+"Lux<br/>降水量:"+rain4+"mm<br/>土壤盐分:"+14+"g/Kg<br/>土壤PH值:"+7.8+
+                "<br/> <a href='" + hotelWebAddress + "'>数据查询</a></td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";                                                   
+            map.addOverlay(createHotelMarker(point4));
+			
+			//节点6（西昌）
+			var point6 = new GLatLng(28.1000,102.2133);
+			var rain6="389";
+			var cTime6="2012-7-29 15:00:00";
+		    var hotelName = "西昌月华基地 油橄榄树  采样时间:"+cTime6;
+            var hotelDescription = "Hefei Intelligent Agriculture Laboratory";
+            var hotelImg = "http://202.127.200.3/sc/images/xichangyuehua.jpg";
+            var hotelImg1 = "http://202.127.200.3/sc/images/xichangyuehua2.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";           
+            var avgPrice = "3";	
+			
+            point6.name  = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>环境温度:"+35.2+"°C<br/>土壤温度:"+35.2+"°C<br/>环境湿度:"+74.3+"%<br/>土壤湿度:"+74.3+"%<br/>光照强度:"+14100+"Lux<br/>降水量:"+rain6+"mm<br/>土壤盐分:"+14.3+"g/Kg<br/>土壤PH值:"+7.3+
+                "<br/> <a href='" + hotelWebAddress + "'>数据查询</a></td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";                                                   
+            map.addOverlay(createHotelMarker(point6));			
+			
+			//节点5（越西）
+			var point5 = new GLatLng(28.6333,102.5000);
+			var rain5="0";
+			var cTime5="2013-10-28 13:45:21";
+		    var hotelName = "越西 苹果  采样时间:"+cTime5;
+            var hotelDescription = "Hefei Intelligent Agriculture Laboratory";
+            var hotelImg = "http://202.127.200.3/images/yuexi-pingguo.jpg";
+            var hotelImg1 = "http://202.127.200.3/images/yuexi-pingguoyuan.jpg";
+            var hotelWebAddress  = "http://202.127.200.3/sc/data.asp";          
+            var avgPrice = "3";	
+			
+            point5.name  = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" + 
+                hotelImg1 + "' height='200' width='180'></td><td><img src='" + 
+                hotelImg +  "' height='200' width='180'></td><td>" +"<br/>环境温度:"+36+"°C<br/>土壤温度:"+36.3+"°C<br/>环境湿度:"+47.7+"%<br/>土壤湿度:"+47.5+"%<br/>光照强度:"+21513+"Lux<br/>降水量:"+rain5+"mm<br/>土壤盐分:"+14+"g/Kg<br/>土壤PH值:"+7.9+
+                "<br/> <a href='" + hotelWebAddress + "'>数据查询</a></td></tr><tr><td colspan='2'>" + 
+                hotelDescription + "</td></tr></table><br/></div>";                                                  
+            map.addOverlay(createHotelMarker(point5));
+    }
+            
+           
+               
+	
+	
+    </script>
+  </head>
+
+ <body onload="initialize()" onunload="GUnload()">
+    <div id="map_canvas" style="width: 800x; height: 800px"></div>
+
+
+	
+  </body>
+</html>

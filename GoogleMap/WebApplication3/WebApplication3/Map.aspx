@@ -1,8 +1,13 @@
-﻿<!DOCTYPE HTML>
-<html lang="en">
-<head>
-  <title>地质异常监测组</title>
-  <meta charset="UTF-8">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Map.aspx.cs" Inherits="WebApplication3.Map" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>地质异常监测组</title>
+    
+    
+    <meta charset="UTF-8">
   <meta name="Generator" content="EditPlus">
   <meta name="Keywords" content="">
   <meta name="Description" content="">
@@ -368,9 +373,12 @@
 			})
 		});
 </script>
+    
+    
 </head>
- <body onload="MapInit()">
-	<div id="page">
+<body onload="MapInit()">
+
+<div id="page">
 		<div class="fanhui">
 			<a href="javascript:void(0)" class="panelarrow" style="display:none"></a>
 		</div>
@@ -552,5 +560,10 @@
 			</div>
 		</div>
 	</div>
- </body>
+
+
+    <form id="form1" runat="server">
+
+    </form>
+</body>
 </html>

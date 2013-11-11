@@ -55,6 +55,7 @@
   <ItemGroup>
     <Content Include="CSS\index.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Image\huangse.png" />
     <Content Include="Image\ico.png" />
     <Content Include="Image\jt.png" />
     <Content Include="Image\logo.png" />

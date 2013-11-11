@@ -37,3 +37,5 @@ p{word-wrap:break-word}
 .foot p{padding: 10px;border-top: 1px solid #E9E9E9;text-align: center;margin-top: 30px;}
 .panelarrow{background:#fff url("../image/panelarrow.png") no-repeat 0 0;width:19px;height:19px;border: 1px solid #999;line-height: normal;margin-top: 0;text-align: center;position: absolute;
 right: 0;left: -1px;top: -1px;z-index: 3;}
+
+.sub-menu .selected {background: #bff;}

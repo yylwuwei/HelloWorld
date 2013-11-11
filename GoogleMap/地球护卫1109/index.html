@@ -12,6 +12,7 @@
 <link href="css/index.css" type="text/css" rel="stylesheet" media="all"/>
 <script type="text/javascript"> 
 
+
 		var bFirst = 1;
 
         var map;
@@ -76,10 +77,31 @@
       title: 'Uluru (Ayers Rock)',
 	  draggable: true,
 	 icon: icon2
-  });
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-  });
+	});
+	google.maps.event.addListener(marker, 'click', function() {
+		//infowindow.open(map,marker);
+		//alert("hello");
+		document.getElementById("liTestID1").className = "selected";
+		document.getElementById("liTestID2").className = "";
+	});
+
+
+    var myLatlng2 = new google.maps.LatLng(23.021548000000,113.121416000000);
+	var marker2 = new google.maps.Marker({
+      position: myLatlng2,
+      map: map,
+      title: 'marker2',
+	});
+	google.maps.event.addListener(marker2, 'click', function() {
+		//infowindow.open(map,marker);
+		document.getElementById("liTestID1").className = "";
+		document.getElementById("liTestID2").className = "selected";
+	});
+
+
+
+
+
 
         }
 
@@ -262,6 +284,7 @@
 
     </script>
 	<script type="text/javascript">
+
 		$(document).ready(function() {
 			var accordion_head = $('.accordion > li > a'),
 				accordion_body = $('.accordion li > .sub-menu');
@@ -275,6 +298,19 @@
 					$(this).addClass('active');
 				}
 			});
+
+			$("li ul li").click(function(){
+        		alert("点击了"+this.innerHTML);
+				document.getElementById("liTestID1").className = "selected";
+				document.getElementById("liTestID2").className = "";
+    		});
+
+			//$("ul li ul li").each(function(){
+			//	$(this).bind("click", function(){
+					//alert("hello");					
+				//});
+			//}); 
+
 			$(".about_btn").click(function(){
 				$('.about_us').show();
 			});
@@ -332,12 +368,12 @@
 						<li>
 							<a href="javascript:void(0)">最新预报</a>
 							<ul class="sub-menu">
-								<li>
+								<li id="liTestID1" >
 									<span class="number">1</span>
 									<span class="time">2013-05-07 11:27</span>
 									<span class="title">台湾花莲7.2级地震</span>
 								</li>
-								<li>
+								<li id="liTestID2">
 									<span class="number">2</span>
 									<span class="time">2013-05-07 11:27</span>
 									<span class="title">台湾花莲7.2级地震</span>

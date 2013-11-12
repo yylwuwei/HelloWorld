@@ -137,6 +137,31 @@
                 infowindow3.open(map, marker4);
             });
 
+
+            AddLi(5, "hello,world");
+            AddLi(6, "hello,world2");
+            
+
+        }
+
+        function AddLi(n, txt) {
+            var s = document.getElementById('ulIDTest');
+            var t = s.childNodes.length;
+            var li = document.createElement("li");
+            li.onclick = function() {
+                alert("dd");
+                li.className = "selected";
+            };
+            li.innerHTML = txt;
+            for (var i = 0; i < n; i++) {
+                s.insertBefore(li, s.childNodes[i]);
+//                 if (n == -1) {
+//                     s.appendChild(li);
+//                 }
+//                 else if (i == n - 1) {
+//                     s.insertBefore(li, s.childNodes[i]);
+//                 }
+            }
         }
 
         function CreateMarker(lat, lng, MyGoToCommunityZoom) {
@@ -437,7 +462,7 @@
                 <div id="testDivID1" class="forecas_tlist">
                     <ul class="accordion">
                         <li><a href="javascript:void(0)">最新预报</a>
-                            <ul class="sub-menu">
+                            <ul id="ulIDTest" class="sub-menu">
                                 <li id="liTestID1"><span class="number">1</span> <span class="time">2013-05-07 11:27</span>
                                     <span class="title">我是广州没有地震</span> </li>
                                 <li id="liTestID2"><span class="number">2</span> <span class="time">2013-05-07 11:27</span>

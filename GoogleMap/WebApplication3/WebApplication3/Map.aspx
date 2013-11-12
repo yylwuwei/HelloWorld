@@ -18,7 +18,24 @@
 
     <script type="text/javascript">
 
+        var yyDataJson; //可以改为局部变量，通过参数传递的形式
+        var yyMarkerArray = new Array();
+        var yyPosArray = new Array(); //可以删掉
+        var yyContentArray = new Array();
+       
+
+        var yyIcon = "http://so.redocn.com/images/redocn/zhuce2.jpg";
+        var yyContentStr = "hello,MM";
+        var yyInfowindow = new google.maps.InfoWindow({
+            content: yyContentStr
+        });
+
         var bFirst = 1;
+        var bFirInit = 1;
+
+        var newCount = 0;
+        var sucCount = 0;
+        var failCount = 0;
 
         var map;
         var polyline;
@@ -29,44 +46,6 @@
         var DefaultLat = 23.16667;
         var DefaultLng = 113.23333;
         var DefaultZoom = 3; //默认情况下的zoom
-
-        var myLatlng1 = new google.maps.LatLng(23.16667, 113.23333);
-        var marker1 = new google.maps.Marker({
-            position: myLatlng1,
-            //map: map,
-            title: 'Uluru (Ayers Rock)'
-        });
-        var marker2 = new google.maps.Marker({
-            position: myLatlng1,
-            //map: map,
-            title: 'Uluru (Ayers Rock)',
-            icon: "Image/huangse.png"
-        });
-
-
-        var rain1 = "0";
-        var cTime1 = "2013-10-28 13:45:20";
-        var hotelName = "我是广州:" + cTime1;
-        var hotelDescription = "GuagnZhou Intelligent Agriculture Laboratory";
-        var hotelImg1 = "http://pic20.nipic.com/20120425/2158798_172748292000_2.jpg";
-        var hotelImg = "http://pic21.nipic.com/20120520/8830844_185002441196_2.jpg";
-        var hotelWebAddress = "http://202.127.200.3/sc/data.asp";
-        var avgPrice = "3";
-
-        var contentString = "<div class='info-window'><b>" + hotelName + "</b><br/><table><tr><td><img src='" +
-                hotelImg1 + "' height='200' width='180'></td><td><img src='" +
-                hotelImg + "' height='200' width='180'></td><td>" + "<br/>广州温度:" + 36 + "°C<br/>广州温度2:" + 36.3 + "°C<br/>广州湿度:" + 48.1 + "%<br/>土广州湿度2:" + 47.5 + "%<br/>广州光照:" + 21522 + "Lux<br/>广州降水量:" + rain1 + "mm<br/>广州土壤:" + 14.1 + "g/Kg<br/>广州PH值:" + 7.9 +
-                "<br/> </td></tr><tr><td colspan='2'>" +
-                hotelDescription + "</td></tr></table><br/></div>";
-
-        var infowindow = new google.maps.InfoWindow({
-            content: contentString
-        });
-
-        var contentString3 = "<div><b>我是佛山</b></div>";
-        var infowindow3 = new google.maps.InfoWindow({
-            content: contentString3
-        });
 
         //地图初始化
         function MapInit() {
@@ -91,76 +70,108 @@
 
             getDistance();
 
-
-            marker1.setMap(map);
-            marker3.setMap(map);
-
-            google.maps.event.addListener(marker1, 'click', function() {
-                $("div[@id=testDivID1] li ul li").each(function() {
-                    //alert(this.id)
-                    this.className = "";
-                });
-
-                infowindow.open(map, marker1);
-                infowindow3.close();
-                document.getElementById("liTestID1").className = "selected";
-                document.getElementById("liTestID2").className = "";
+            $.ajax({
+                type: "get",
+                url: "Handler1.ashx",
+                dataType: "json",
+                data: "name=yyl&pwd=123",
+                success: function(dataJson) {
+                    yyDataJson = dataJson;
+                    AutoAddMarker();
+                    if (bFirInit == 1) {
+                        bFirInit = 2;
+                        for (var i in dataJson) {
+                            //alert(dataJson[i].Title);
+                            AddLi(dataJson[i].Type, dataJson[i].Title, dataJson[i].Time, dataJson[i].ID);
+                            yyContentArray[i] = dataJson[i].EventContent;
+                        }
+                    }
+                },
+                error: function(err) {
+                    alert(err);
+                }
             });
-            google.maps.event.addListener(marker2, 'click', function() {
-                $("div[@id=testDivID1] li ul li").each(function() {
-                    //alert(this.id)
-                    this.className = "";
-                });
-                infowindow.open(map, marker2);
-                infowindow3.close();
-                document.getElementById("liTestID1").className = "selected";
-                document.getElementById("liTestID2").className = "";
-            });
-            google.maps.event.addListener(marker3, 'click', function() {
-                $("div[@id=testDivID1] li ul li").each(function() {
-                    //alert(this.id)
-                    this.className = "";
-                });
-                document.getElementById("liTestID1").className = "";
-                document.getElementById("liTestID2").className = "selected";
-                infowindow.close();
-                infowindow3.open(map, marker3);
-            });
-            google.maps.event.addListener(marker4, 'click', function() {
-                $("div[@id=testDivID1] li ul li").each(function() {
-                    //alert(this.id)
-                    this.className = "";
-                });
-                document.getElementById("liTestID1").className = "";
-                document.getElementById("liTestID2").className = "selected";
-                infowindow.close();
-                infowindow3.open(map, marker4);
-            });
-
-
-            AddLi(5, "hello,world");
-            AddLi(6, "hello,world2");
-            
-
         }
 
-        function AddLi(n, txt) {
-            var s = document.getElementById('ulIDTest');
-            var t = s.childNodes.length;
+        function AddLi(type, title, time, id) {
+            var ulID;
+            var showLiID;
+            if (type == "1") {
+                ulID = "ulIDTest1";
+                newCount++;
+                showLiID = newCount;
+            }
+            else if (type == "2") {
+                ulID = "ulIDTest2";
+                sucCount++;        
+                showLiID = sucCount;
+            }
+            else if(type == "3") {
+                ulID = "ulIDTest3";
+                failCount++;
+                showLiID = failCount;
+            }
+            var s = document.getElementById(ulID);
             var li = document.createElement("li");
-            li.onclick = function() {
-                alert("dd");
+            li.id = id;
+            li.onclick = function () {
+                $("div[@id=testDivID1] li ul li").each(function() {
+                    this.className = "";
+                });
                 li.className = "selected";
-            };
-            li.innerHTML = txt;
-            for (var i = 0; i < n; i++) {
-                s.insertBefore(li, s.childNodes[i]);
-//                 if (n == -1) {
-//                     s.appendChild(li);
-//                 }
-//                 else if (i == n - 1) {
-//                     s.insertBefore(li, s.childNodes[i]);
-//                 }
+                for (j in yyMarkerArray) {
+                    yyMarkerArray[j].setIcon(null);
+                }
+                var iIndex = li.id;
+                yyMarkerArray[iIndex].setIcon(yyIcon);
+                //yyContentStr = yyMarkerArray[iIndex].title;
+                yyContentStr = yyContentArray[iIndex];
+                yyInfowindow.setContent(yyContentStr);
+                yyInfowindow.open(map, yyMarkerArray[iIndex]);
+            }  
+            li.innerHTML = "<span class='number'>"+showLiID+"</span> <span class='time'>"+time+"</span><span class='title'>"+title+"</span>";
+            s.appendChild(li);
+        }
+
+        function AutoAddMarker() {
+        
+            yyMarkerArray = [];
+            yyPosArray = [];
+            
+            for (var i in yyDataJson) {
+                var yyLatlng = new google.maps.LatLng(yyDataJson[i].Lat, yyDataJson[i].Lng);
+                var yyMarker = new google.maps.Marker({
+                    position: yyLatlng,
+                    title: yyDataJson[i].Title,
+                    id: i
+                });
+                yyMarker.setMap(map);
+                yyMarkerArray[i] = yyMarker;
+                google.maps.event.addListener(yyMarker, 'click', function() {
+                    $("div[@id=testDivID1] li ul li").each(function() {
+                        this.className = "";
+                    });
+                    document.getElementById(this.id).className = "selected";
+
+                    var curIndex = parseInt(this.id) + 1;
+                    if (curIndex <= newCount) {
+                        //alert(curIndex);
+                    }
+                    else if (curIndex > newCount && curIndex <= (newCount + sucCount)) {
+                        //alert(curIndex);
+                        //accordion_head.click();
+                    }
+                    else if (curIndex > (newCount + sucCount) && curIndex <= (newCount + sucCount + failCount)) {
+                        //alert(curIndex);
+                    }
+
+                    for (j in yyMarkerArray) {
+                        yyMarkerArray[j].setIcon(null);
+                    }
+                    this.setIcon(yyIcon);
+                    yyInfowindow.setContent(this.title);
+                    yyInfowindow.open(map, this);
+                });
             }
         }
 
@@ -262,29 +273,11 @@
                 infowindow2.open(map, marker);
 
                 google.maps.event.addListener(infowindow2, "closeclick", function() {
-                    //alert('hello');
-
-                    bFirst = 1;
-                    if (lenArray) {
-                        for (i in lenArray) {
-                            lenArray[i].setMap(null);
-                        }
-                        lenArray.length = 0;
-                    }
-
-                    //清除原有折线路径
-                    if (polylinesArray) {
-                        for (i in polylinesArray) {
-                            polylinesArray[i].setMap(null);
-                        }
-                        polylinesArray = [];
-                    }
-                    //document.getElementById("sRes").innerHTML="0.000";
+                    deleteOverlays();
                 });
             }
 
             bFirst++;
-
 
             polylinesArray.push(polyline);
         }
@@ -334,7 +327,6 @@
                 }
                 polylinesArray = [];
             }
-            //document.getElementById("sRes").innerHTML="0.000";
         }
 
 
@@ -342,25 +334,13 @@
 
     <script type="text/javascript">
 
-        var myLatlng3 = new google.maps.LatLng(23.021548000000, 115.121416000000);
-        var marker3 = new google.maps.Marker({
-            position: myLatlng3,
-            map: map,
-            title: 'marker3'
-        });
-        var marker4 = new google.maps.Marker({
-            position: myLatlng3,
-            title: 'marker4',
-            icon: "Image/huangse.png"
-        });
-
         $(document).ready(function() {
 
             var accordion_head = $('.accordion > li > a'),
 				accordion_body = $('.accordion li > .sub-menu');
             accordion_head.first().addClass('active').next().slideDown('normal');
             accordion_head.live('click', function(event) {
-                event.preventDefault();
+                //event.preventDefault();
                 if ($(this).attr('class') != 'active') {
                     accordion_body.slideUp('normal');
                     $(this).next().stop(true, true).slideToggle('normal');
@@ -375,32 +355,6 @@
                     this.className = "";
                 });
                 this.className = "selected";
-                if (this.id == "liTestID1") {
-                    marker1.setMap(null);
-                    marker2.setMap(map);
-                    marker3.setMap(map);
-                    marker4.setMap(null);
-                    infowindow.open(map, marker2);
-                    infowindow3.close();
-                }
-                else if (this.id == "liTestID2") {
-                    marker1.setMap(map);
-                    marker2.setMap(null);
-                    marker3.setMap(null);
-                    marker4.setMap(map);
-                    infowindow.close();
-                    infowindow3.open(map, marker4);
-                }
-                else {
-                    marker1.setMap(map);
-                    marker2.setMap(null);
-                    marker3.setMap(map);
-                    marker4.setMap(null);
-                    infowindow.close();
-                    infowindow3.close();
-                }
-
-
             });
 
             $(".about_btn").click(function() {
@@ -411,7 +365,6 @@
             });
             $(".full").click(function() {
                 $('.map_info').hide();
-                //$('#map').css("width","100%");				
                 $('#map').css("margin-left", "0");
                 $('.panelarrow').show();
                 MapInit();
@@ -461,68 +414,22 @@
             <div class="forecas">
                 <div id="testDivID1" class="forecas_tlist">
                     <ul class="accordion">
-                        <li><a href="javascript:void(0)">最新预报</a>
-                            <ul id="ulIDTest" class="sub-menu">
-                                <li id="liTestID1"><span class="number">1</span> <span class="time">2013-05-07 11:27</span>
-                                    <span class="title">我是广州没有地震</span> </li>
-                                <li id="liTestID2"><span class="number">2</span> <span class="time">2013-05-07 11:27</span>
-                                    <span class="title">我是佛山没有海啸</span> </li>
-                                <li><span class="number">3</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">4</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
+                        <li id="newLi"><a href="javascript:void(0)">最新预报</a>
+                            <ul id="ulIDTest1" class="sub-menu">
+<!--                                 <li ><span class="number">1</span> <span class="time">2013-05-07 11:27</span> -->
+<!--                                     <span class="title">我是广州没有地震</span> </li> -->
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0)">成功预报</a>
-                            <ul class="sub-menu">
-                                <li><span class="number">1</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">2</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">3</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">4</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
+                        <li ><a id="sucLi" href="javascript:void(0)">成功预报</a>
+                            <ul id="ulIDTest2" class="sub-menu">
+<!--                                 <li><span class="number">1</span> <span class="time">2013-05-07 11:27</span> <span -->
+<!--                                     class="title">台湾花莲7.2级地震</span> </li> -->
                             </ul>
                         </li>
-                        <li><a href="javascript:void(0)">失败预报</a>
-                            <ul class="sub-menu">
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
-                                <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span
-                                    class="title">台湾花莲7.2级地震</span> </li>
+                        <li id="failLi"><a href="javascript:void(0)">失败预报</a>
+                            <ul id="ulIDTest3" class="sub-menu">
+<!--                                 <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span -->
+<!--                                     class="title">台湾花莲7.2级地震</span> </li> -->
                             </ul>
                         </li>
                     </ul>

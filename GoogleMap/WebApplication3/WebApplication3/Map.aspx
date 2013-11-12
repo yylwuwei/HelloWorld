@@ -22,8 +22,13 @@
         var yyMarkerArray = new Array();
         var yyPosArray = new Array(); //可以删掉
         var yyContentArray = new Array();
-       
 
+
+        var newIcon = { anchor: new google.maps.Point(0, 0), origin: new google.maps.Point(0, 0), size: new google.maps.Size(50, 74), url: "http://news.ceic.ac.cn/images/star.gif" };
+        var sucIcon = "Image/huangse.png";
+        var failIcon = "Image/huise.png";
+        
+        
         var yyIcon = "http://so.redocn.com/images/redocn/zhuce2.jpg";
         var yyContentStr = "hello,MM";
         var yyInfowindow = new google.maps.InfoWindow({
@@ -120,10 +125,22 @@
                 });
                 li.className = "selected";
                 for (j in yyMarkerArray) {
-                    yyMarkerArray[j].setIcon(null);
+                    //yyMarkerArray[j].setIcon(null);
                 }
                 var iIndex = li.id;
-                yyMarkerArray[iIndex].setIcon(yyIcon);
+
+                var curIndex = parseInt(iIndex) + 1;
+                if (curIndex <= newCount) {
+                    yyMarkerArray[iIndex].setIcon(newIcon);
+                }
+                else if (curIndex > newCount && curIndex <= (newCount + sucCount)) {
+                    yyMarkerArray[iIndex].setIcon(sucIcon);
+                }
+                else if (curIndex > (newCount + sucCount) && curIndex <= (newCount + sucCount + failCount)) {
+                    yyMarkerArray[iIndex].setIcon(failIcon);
+                }
+
+                //yyMarkerArray[iIndex].setIcon(yyIcon);
                 //yyContentStr = yyMarkerArray[iIndex].title;
                 yyContentStr = yyContentArray[iIndex];
                 yyInfowindow.setContent(yyContentStr);
@@ -145,6 +162,16 @@
                     title: yyDataJson[i].Title,
                     id: i
                 });
+                if (yyDataJson[i].Type == "1") {
+                    yyMarker.setIcon(newIcon);
+                    yyMarker.setDraggable(true);                    
+                }
+                else if (yyDataJson[i].Type == "2") {
+                    yyMarker.setIcon(sucIcon);
+                }
+                else if (yyDataJson[i].Type == "3") {
+                    yyMarker.setIcon(failIcon);
+                }
                 yyMarker.setMap(map);
                 yyMarkerArray[i] = yyMarker;
                 google.maps.event.addListener(yyMarker, 'click', function() {
@@ -153,6 +180,7 @@
                     });
                     document.getElementById(this.id).className = "selected";
 
+                    //也可以直接根据type来进行判断
                     var curIndex = parseInt(this.id) + 1;
                     if (curIndex <= newCount) {
                         //alert(curIndex);
@@ -166,9 +194,9 @@
                     }
 
                     for (j in yyMarkerArray) {
-                        yyMarkerArray[j].setIcon(null);
+                        //yyMarkerArray[j].setIcon(null);
                     }
-                    this.setIcon(yyIcon);
+                    //this.setIcon(yyIcon);
                     yyInfowindow.setContent(this.title);
                     yyInfowindow.open(map, this);
                 });

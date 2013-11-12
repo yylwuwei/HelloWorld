@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Handler1.ashx" />
+    <Content Include="Image\huise.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

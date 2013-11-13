@@ -20,8 +20,15 @@
 
         var yyDataJson; //可以改为局部变量，通过参数传递的形式
         var yyMarkerArray = new Array();
+        var yyNewMarkerArray = new Array();
+        var yySucMarkerArray = new Array();
+        var yyFailMarkerArray = new Array();
+        var yyCurType = "nono";
+        
+        
         var yyPosArray = new Array(); //可以删掉
         var yyContentArray = new Array();
+        
 
 
         var newIcon = { anchor: new google.maps.Point(0, 0), origin: new google.maps.Point(0, 0), size: new google.maps.Size(50, 74), url: "http://news.ceic.ac.cn/images/star.gif" };
@@ -54,6 +61,9 @@
 
         //地图初始化
         function MapInit() {
+
+            
+            
             var singapoerCenter = new google.maps.LatLng(DefaultLat, DefaultLng); //设置中心位置
             var myOptions = {
                 zoom: DefaultZoom,
@@ -124,24 +134,8 @@
                     this.className = "";
                 });
                 li.className = "selected";
-                for (j in yyMarkerArray) {
-                    //yyMarkerArray[j].setIcon(null);
-                }
                 var iIndex = li.id;
 
-                var curIndex = parseInt(iIndex) + 1;
-                if (curIndex <= newCount) {
-                    yyMarkerArray[iIndex].setIcon(newIcon);
-                }
-                else if (curIndex > newCount && curIndex <= (newCount + sucCount)) {
-                    yyMarkerArray[iIndex].setIcon(sucIcon);
-                }
-                else if (curIndex > (newCount + sucCount) && curIndex <= (newCount + sucCount + failCount)) {
-                    yyMarkerArray[iIndex].setIcon(failIcon);
-                }
-
-                //yyMarkerArray[iIndex].setIcon(yyIcon);
-                //yyContentStr = yyMarkerArray[iIndex].title;
                 yyContentStr = yyContentArray[iIndex];
                 yyInfowindow.setContent(yyContentStr);
                 yyInfowindow.open(map, yyMarkerArray[iIndex]);
@@ -153,6 +147,9 @@
         function AutoAddMarker() {
         
             yyMarkerArray = [];
+            yyNewMarkerArray = [];
+            yySucMarkerArray = [];
+            yyFailMarkerArray = [];
             yyPosArray = [];
             
             for (var i in yyDataJson) {
@@ -164,15 +161,28 @@
                 });
                 if (yyDataJson[i].Type == "1") {
                     yyMarker.setIcon(newIcon);
-                    yyMarker.setDraggable(true);                    
+                    yyMarker.setDraggable(true);
+                    if (yyCurType == "nono" || yyCurType == "newLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyNewMarkerArray.push(yyMarker);
                 }
                 else if (yyDataJson[i].Type == "2") {
                     yyMarker.setIcon(sucIcon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "sucLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yySucMarkerArray.push(yyMarker);
                 }
                 else if (yyDataJson[i].Type == "3") {
                     yyMarker.setIcon(failIcon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyFailMarkerArray.push(yyMarker);
                 }
-                yyMarker.setMap(map);
                 yyMarkerArray[i] = yyMarker;
                 google.maps.event.addListener(yyMarker, 'click', function() {
                     $("div[@id=testDivID1] li ul li").each(function() {
@@ -180,26 +190,6 @@
                     });
                     document.getElementById(this.id).className = "selected";
 
-                    //也可以直接根据type来进行判断
-                    var curIndex = parseInt(this.id) + 1;
-                    if (curIndex <= newCount) {
-                        //alert(curIndex);
-                        $("#newLi").click();
-                    }
-                    else if (curIndex > newCount && curIndex <= (newCount + sucCount)) {
-                        //alert(curIndex);
-                        //accordion_head.click();
-                        $("#sucLi").click();
-                }
-                    else if (curIndex > (newCount + sucCount) && curIndex <= (newCount + sucCount + failCount)) {
-                        //alert(curIndex);
-                        $("#failLi").click();
-                }
-
-                    for (j in yyMarkerArray) {
-                        //yyMarkerArray[j].setIcon(null);
-                    }
-                    //this.setIcon(yyIcon);
                     yyInfowindow.setContent(this.title);
                     yyInfowindow.open(map, this);
                 });
@@ -377,6 +367,26 @@
                     $(this).next().stop(true, true).slideToggle('normal');
                     accordion_head.removeClass('active');
                     $(this).addClass('active');
+                    var itemID = $(this).attr('id');
+                    yyCurType = itemID;
+                    for (i in yyMarkerArray) {
+                        yyMarkerArray[i].setMap(null);
+                    }
+                    if (itemID == 'newLi') {
+                        for (i in yyNewMarkerArray) {
+                            yyNewMarkerArray[i].setMap(map);
+                        }
+                    }
+                    else if (itemID == 'sucLi') {
+                    for (i in yySucMarkerArray) {
+                        yySucMarkerArray[i].setMap(map);
+                    }
+                }
+                    else if (itemID == 'failLi') {
+                    for (i in yyFailMarkerArray) {
+                        yyFailMarkerArray[i].setMap(map);
+                    }
+                }
                 }
             });
 

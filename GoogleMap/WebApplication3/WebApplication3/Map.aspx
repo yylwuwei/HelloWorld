@@ -29,9 +29,7 @@
         var yyPosArray = new Array(); //可以删掉
         var yyContentArray = new Array();
         
-
-
-        var newIcon = { anchor: new google.maps.Point(0, 0), origin: new google.maps.Point(0, 0), size: new google.maps.Size(50, 74), url: "http://news.ceic.ac.cn/images/star.gif" };
+        var newIcon = { anchor: new google.maps.Point(0, 0), origin: new google.maps.Point(0, 0), size: new google.maps.Size(22, 30), url: "http://news.ceic.ac.cn/images/star.gif" };
         var sucIcon = "Image/huangse.png";
         var failIcon = "Image/huise.png";
         
@@ -62,8 +60,6 @@
         //地图初始化
         function MapInit() {
 
-            
-            
             var singapoerCenter = new google.maps.LatLng(DefaultLat, DefaultLng); //设置中心位置
             var myOptions = {
                 zoom: DefaultZoom,
@@ -189,8 +185,7 @@
                         this.className = "";
                     });
                     document.getElementById(this.id).className = "selected";
-
-                    yyInfowindow.setContent(this.title);
+                    yyInfowindow.setContent(yyContentArray[this.id]);
                     yyInfowindow.open(map, this);
                 });
             }

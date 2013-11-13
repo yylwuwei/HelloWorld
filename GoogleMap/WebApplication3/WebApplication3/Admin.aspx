@@ -41,7 +41,7 @@
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:sqlybspConnectionString %>" 
-            SelectCommand="SELECT * FROM [MapTable]"></asp:SqlDataSource>
+            SelectCommand="SELECT * FROM [MapTable] order by Type"></asp:SqlDataSource>
         <br />
         <h1>地图后台管理--告警信息点增加</h1>
         <hr />

@@ -5,6 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title></title>
+    <style type="text/css">
+    #GridView1 TD{word-break:break-all; width:100px;}
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,7 +17,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" 
             ForeColor="#333333" GridLines="None" AllowPaging="True" 
-            AllowSorting="True" PageSize="8">
+            AllowSorting="True" PageSize="8" Width="80%">
             <RowStyle BackColor="#EFF3FB" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />

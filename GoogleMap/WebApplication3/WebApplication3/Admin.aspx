@@ -15,10 +15,10 @@
     <h1>地图后台管理--告警信息点查询</h1>
     <hr />
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
-            CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" 
-            ForeColor="#333333" GridLines="None" AllowPaging="True" 
-            AllowSorting="True" PageSize="8" Width="80%">
-            <RowStyle BackColor="#EFF3FB" />
+            CellPadding="3" DataKeyNames="ID" DataSourceID="SqlDataSource1" AllowPaging="True" 
+            AllowSorting="True" PageSize="8" Width="80%" BackColor="#DEBA84" 
+            BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2">
+            <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" 
@@ -35,12 +35,10 @@
                 <asp:CheckBoxField DataField="IsValid" HeaderText="IsValid" 
                     SortExpression="IsValid" />
             </Columns>
-            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-            <EditRowStyle BackColor="#2461BF" />
-            <AlternatingRowStyle BackColor="White" />
+            <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+            <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
             ConnectionString="<%$ ConnectionStrings:sqlybspConnectionString %>" 

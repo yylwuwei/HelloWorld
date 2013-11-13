@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="WebApplication3.Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="WebApplication3.Admin" validateRequest="false" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -14,7 +14,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" 
             ForeColor="#333333" GridLines="None" AllowPaging="True" 
-            AllowSorting="True" PageSize="5">
+            AllowSorting="True" PageSize="8">
             <RowStyle BackColor="#EFF3FB" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />

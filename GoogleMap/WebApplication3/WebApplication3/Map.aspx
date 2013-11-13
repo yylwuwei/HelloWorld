@@ -184,14 +184,17 @@
                     var curIndex = parseInt(this.id) + 1;
                     if (curIndex <= newCount) {
                         //alert(curIndex);
+                        $("#newLi").click();
                     }
                     else if (curIndex > newCount && curIndex <= (newCount + sucCount)) {
                         //alert(curIndex);
                         //accordion_head.click();
-                    }
+                        $("#sucLi").click();
+                }
                     else if (curIndex > (newCount + sucCount) && curIndex <= (newCount + sucCount + failCount)) {
                         //alert(curIndex);
-                    }
+                        $("#failLi").click();
+                }
 
                     for (j in yyMarkerArray) {
                         //yyMarkerArray[j].setIcon(null);
@@ -442,7 +445,7 @@
             <div class="forecas">
                 <div id="testDivID1" class="forecas_tlist">
                     <ul class="accordion">
-                        <li id="newLi"><a href="javascript:void(0)">最新预报</a>
+                        <li ><a id="newLi" href="javascript:void(0)">最新预报</a>
                             <ul id="ulIDTest1" class="sub-menu">
 <!--                                 <li ><span class="number">1</span> <span class="time">2013-05-07 11:27</span> -->
 <!--                                     <span class="title">我是广州没有地震</span> </li> -->
@@ -454,7 +457,7 @@
 <!--                                     class="title">台湾花莲7.2级地震</span> </li> -->
                             </ul>
                         </li>
-                        <li id="failLi"><a href="javascript:void(0)">失败预报</a>
+                        <li ><a id="failLi" href="javascript:void(0)">失败预报</a>
                             <ul id="ulIDTest3" class="sub-menu">
 <!--                                 <li><span class="number">5</span> <span class="time">2013-05-07 11:27</span> <span -->
 <!--                                     class="title">台湾花莲7.2级地震</span> </li> -->

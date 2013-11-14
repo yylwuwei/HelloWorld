@@ -12,8 +12,8 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <h1>地图后台管理--告警信息点查询</h1>
-    <hr />
+<!--     <h1>地图后台管理--告警信息点查询</h1> -->
+<!--     <hr /> -->
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
             CellPadding="3" DataKeyNames="ID" DataSourceID="SqlDataSource1" AllowPaging="True" 
             AllowSorting="True" PageSize="8" Width="80%" BackColor="#DEBA84" 
@@ -44,7 +44,7 @@
             ConnectionString="<%$ ConnectionStrings:sqlybspConnectionString %>" 
             SelectCommand="SELECT * FROM [MapTable] order by Type"></asp:SqlDataSource>
         <br />
-        <h1>地图后台管理--告警信息点增加</h1>
+        <h1>地图后台管理--告警信息点<asp:Label ID="Label1" runat="server" Text=""></asp:Label></h1>
         <hr />
         <table border="0" cellspacing="0" cellpadding="0" width="100%">
         	<tr>
@@ -75,7 +75,7 @@
         	</tr>
         	<tr>
         		<td></td><td> 
-                    <asp:Button ID="Button1" runat="server" Text="点击增加" onclick="Button1_Click" /> &nbsp;  ps: 所有项必须正确填写，否则提交失败。         <td>
+                    <asp:Button ID="Button1" runat="server" Text="点击保存" onclick="Button1_Click" /> &nbsp;  ps: 所有项必须正确填写，否则提交失败。         <td>
         	</tr>
         </table>
             

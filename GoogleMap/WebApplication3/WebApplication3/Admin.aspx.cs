@@ -14,6 +14,7 @@ namespace WebApplication3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.GridView1.Visible = false;
             if (!IsPostBack)
             {
                 this.RadioButtonList1.Items.Add(new ListItem("新的报告", "1"));

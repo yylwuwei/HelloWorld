@@ -44,7 +44,7 @@
             ConnectionString="<%$ ConnectionStrings:sqlybspConnectionString %>" 
             SelectCommand="SELECT * FROM [MapTable] order by Type"></asp:SqlDataSource>
         <br />
-        <h1>地图后台管理--告警信息点<asp:Label ID="Label1" runat="server" Text=""></asp:Label></h1>
+        <h1>地图后台管理--<asp:Label ID="lblTitle" runat="server" Text="新增"></asp:Label>告警信息点</h1>
         <hr />
         <table border="0" cellspacing="0" cellpadding="0" width="100%">
         	<tr>
@@ -75,9 +75,17 @@
         	</tr>
         	<tr>
         		<td></td><td> 
-                    <asp:Button ID="Button1" runat="server" Text="点击保存" onclick="Button1_Click" /> &nbsp;  ps: 所有项必须正确填写，否则提交失败。         <td>
+                    <asp:Button ID="btnSave" runat="server" Text="点击保存" onclick="btnSave_Click" /><asp:Button ID="Button1" runat="server" Text="点击新建" onclick="Button1_Click" /> &nbsp;  ps: 所有项必须正确填写，否则提交失败。         <td>
         	</tr>
         </table>
+        
+        <br/>
+        <hr />
+        <br />
+        
+        <a href="List.aspx">点击返回后台列表页</a>
+        <br /><br />
+        <a href="Map.aspx">点击进入前台地图页</a>
             
     </div>
     </form>

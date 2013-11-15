@@ -190,10 +190,6 @@
                     }
                     yyFailSucMarkerArray.push(yyMarker);
                 }
-
-//                 if (yyDataJson[i].IsValid == "False") {
-//                     yyMarker.setMap(map);
-//                 }
                 
                 yyMarkerArray[i] = yyMarker;
                 google.maps.event.addListener(yyMarker, 'click', function() {

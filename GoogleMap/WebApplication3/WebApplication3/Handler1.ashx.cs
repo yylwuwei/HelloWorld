@@ -47,6 +47,7 @@ namespace WebApplication3
                 string strLat = dt.Rows[i]["Lat"].ToString();
                 string strLng = dt.Rows[i]["Lng"].ToString();
                 string strContent = dt.Rows[i]["EventContent"].ToString();
+                strContent = strContent.Replace("#", "<br/>");
                 string strVisible = dt.Rows[i]["IsVisible"].ToString();
                 string strType = dt.Rows[i]["Type"].ToString();
                 string strValid = dt.Rows[i]["IsValid"].ToString();

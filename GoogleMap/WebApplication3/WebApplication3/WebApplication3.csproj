@@ -110,6 +110,7 @@
     <Content Include="Admin.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="Handler1.ashx" />
+    <Content Include="Image\hongse.png" />
     <Content Include="Image\huise.png" />
     <Content Include="List.aspx" />
   </ItemGroup>

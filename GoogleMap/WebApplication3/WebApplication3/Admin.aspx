@@ -58,7 +58,7 @@
         	<tr>
         		<td>内容：</td><td>
                 <asp:TextBox ID="txtContent" runat="server" Height="101px" 
-                    Width="366px" TextMode="MultiLine"></asp:TextBox>&nbsp;&nbsp;点击地图上的告警标志，会显示此内容<td>
+                    Width="366px" TextMode="MultiLine"></asp:TextBox><td>
         	</tr>
         	<tr>
         		<td>类型：</td><td>

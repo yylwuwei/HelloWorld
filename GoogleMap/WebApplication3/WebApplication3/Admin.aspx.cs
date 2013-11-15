@@ -20,9 +20,10 @@ namespace WebApplication3
             this.GridView1.Visible = false;
             if (!IsPostBack)
             {
-                this.RadioButtonList1.Items.Add(new ListItem("新的报告", "1"));
-                this.RadioButtonList1.Items.Add(new ListItem("成功报告", "2"));
-                this.RadioButtonList1.Items.Add(new ListItem("失败报告", "3"));
+                this.RadioButtonList1.Items.Add(new ListItem("新的预告", "1"));
+                this.RadioButtonList1.Items.Add(new ListItem("成功预告", "2"));
+                this.RadioButtonList1.Items.Add(new ListItem("失败预告", "3"));
+                this.RadioButtonList1.Items.Add(new ListItem("与失败预告同时显示的成功报告", "4"));
                 RadioButtonList1.SelectedIndex = 0;
                 this.btnSave.Visible = false;
                 this.Button1.Visible = true;

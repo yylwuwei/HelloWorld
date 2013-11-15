@@ -52,6 +52,7 @@ namespace WebApplication3
                 string strValid = dt.Rows[i]["IsValid"].ToString();
 
                 if (strValid.Contains("True") && strVisible.Contains("True"))
+//                 if (strVisible.Contains("True"))
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add("ID", strID);
@@ -61,6 +62,7 @@ namespace WebApplication3
                     ht.Add("Lng", strLng);
                     ht.Add("EventContent", strContent);
                     ht.Add("Type", strType);
+                    ht.Add("IsValid", strType);
                     eventList.Add(ht);
                 }
             }

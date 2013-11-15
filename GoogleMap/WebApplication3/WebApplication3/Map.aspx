@@ -23,6 +23,7 @@
         var yyNewMarkerArray = new Array();
         var yySucMarkerArray = new Array();
         var yyFailMarkerArray = new Array();
+        var yyFailSucMarkerArray = new Array();
         var yyCurType = "nono";
         
         
@@ -32,6 +33,7 @@
         var newIcon = { anchor: new google.maps.Point(0, 0), origin: new google.maps.Point(0, 0), size: new google.maps.Size(22, 30), url: "http://news.ceic.ac.cn/images/star.gif" };
         var sucIcon = "Image/huangse.png";
         var failIcon = "Image/huise.png";
+        var failSucIcon = "Image/hongse.png";
         
         
         var yyIcon = "http://so.redocn.com/images/redocn/zhuce2.jpg";
@@ -93,7 +95,7 @@
                         bFirInit = 2;
                         for (var i in dataJson) {
                             //alert(dataJson[i].Title);
-                            AddLi(dataJson[i].Type, dataJson[i].Title, dataJson[i].Time, dataJson[i].ID);
+                            AddLi(dataJson[i].Type, dataJson[i].Title, dataJson[i].Time, i);
                             yyContentArray[i] = dataJson[i].EventContent;
                         }
                     }
@@ -117,7 +119,7 @@
                 sucCount++;        
                 showLiID = sucCount;
             }
-            else if(type == "3") {
+            else if(type == "3" || type == "4") {
                 ulID = "ulIDTest3";
                 failCount++;
                 showLiID = failCount;
@@ -146,6 +148,7 @@
             yyNewMarkerArray = [];
             yySucMarkerArray = [];
             yyFailMarkerArray = [];
+            yyFailSucMarkerArray = [];            
             yyPosArray = [];
             
             for (var i in yyDataJson) {
@@ -179,6 +182,19 @@
                     }
                     yyFailMarkerArray.push(yyMarker);
                 }
+                else if (yyDataJson[i].Type == "4") {
+                    yyMarker.setIcon(failSucIcon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyFailSucMarkerArray.push(yyMarker);
+                }
+
+//                 if (yyDataJson[i].IsValid == "False") {
+//                     yyMarker.setMap(map);
+//                 }
+                
                 yyMarkerArray[i] = yyMarker;
                 google.maps.event.addListener(yyMarker, 'click', function() {
                     $("div[@id=testDivID1] li ul li").each(function() {
@@ -352,41 +368,44 @@
 
         $(document).ready(function() {
 
-            var accordion_head = $('.accordion > li > a'),
+        var accordion_head = $('.accordion > li > a'),
 				accordion_body = $('.accordion li > .sub-menu');
-            accordion_head.first().addClass('active').next().slideDown('normal');
-            accordion_head.live('click', function(event) {
-                //event.preventDefault();
-                if ($(this).attr('class') != 'active') {
-                    accordion_body.slideUp('normal');
-                    $(this).next().stop(true, true).slideToggle('normal');
-                    accordion_head.removeClass('active');
-                    $(this).addClass('active');
-                    var itemID = $(this).attr('id');
-                    yyCurType = itemID;
-                    for (i in yyMarkerArray) {
-                        yyMarkerArray[i].setMap(null);
+        accordion_head.first().addClass('active').next().slideDown('normal');
+        accordion_head.live('click', function(event) {
+            //event.preventDefault();
+            if ($(this).attr('class') != 'active') {
+                accordion_body.slideUp('normal');
+                $(this).next().stop(true, true).slideToggle('normal');
+                accordion_head.removeClass('active');
+                $(this).addClass('active');
+                var itemID = $(this).attr('id');
+                yyCurType = itemID;
+                for (i in yyMarkerArray) {
+                    yyMarkerArray[i].setMap(null);
+                }
+                if (itemID == 'newLi') {
+                    for (i in yyNewMarkerArray) {
+                        yyNewMarkerArray[i].setMap(map);
                     }
-                    if (itemID == 'newLi') {
-                        for (i in yyNewMarkerArray) {
-                            yyNewMarkerArray[i].setMap(map);
-                        }
-                    }
-                    else if (itemID == 'sucLi') {
+                }
+                else if (itemID == 'sucLi') {
                     for (i in yySucMarkerArray) {
                         yySucMarkerArray[i].setMap(map);
                     }
                 }
-                    else if (itemID == 'failLi') {
+                else if (itemID == 'failLi') {
                     for (i in yyFailMarkerArray) {
                         yyFailMarkerArray[i].setMap(map);
                     }
+                    for (i in yyFailSucMarkerArray) {
+                        yyFailSucMarkerArray[i].setMap(map);
+                    }
                 }
-                }
-            });
+            }
+        });
 
-            $("li ul li").click(function() {
-                $("div[@id=testDivID1] li ul li").each(function() {
+        $("li ul li").click(function() {
+            $("div[@id=testDivID1] li ul li").each(function() {
                     //alert(this.id)
                     this.className = "";
                 });

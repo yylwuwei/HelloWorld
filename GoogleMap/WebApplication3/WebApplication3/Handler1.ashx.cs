@@ -30,7 +30,7 @@ namespace WebApplication3
 
             conn.Open();
 
-            string sql = "select * from MapTable";
+            string sql = "select * from MapTable order by Time desc";
 
             SqlCommand cmd = new SqlCommand(sql, conn);
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="WebApplication3.Admin" validateRequest="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="WebApplication3.Admin" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -58,13 +58,19 @@
         	<tr>
         		<td>内容：</td><td>
                 <asp:TextBox ID="txtContent" runat="server" Height="101px" 
-                    Width="366px" TextMode="MultiLine"></asp:TextBox><td>
+                    Width="366px" TextMode="MultiLine"></asp:TextBox>&nbsp;&nbsp;输入#表示换行<td>
+        	</tr>
+        	<tr>
+        		<td>&nbsp;</td><td><td>
         	</tr>
         	<tr>
         		<td>类型：</td><td>
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
                     </asp:RadioButtonList>
                     <td>
+        	</tr>
+        	<tr>
+        		<td>&nbsp;</td><td><td>
         	</tr>
         	<tr>
         		<td>纬度：</td><td><asp:TextBox ID="txtLat" runat="server" Width="366px"></asp:TextBox>&nbsp;&nbsp;示例：31.820587<td>
@@ -85,7 +91,7 @@
         
         <a href="List.aspx">点击返回后台列表页</a>
         <br /><br />
-        <a href="Map.aspx">点击进入前台地图页</a>
+        <a href="UserEdit.aspx">点击进入用户编辑</a>
             
     </div>
     </form>

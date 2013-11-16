@@ -58,6 +58,9 @@
         
         <br />
         <a href="Map.aspx">点击进入前台地图页</a>
+        <br />
+        <br />
+        <a href="UserEdit.aspx">点击进入用户信息编辑页</a>
 
     </div>
     </form>

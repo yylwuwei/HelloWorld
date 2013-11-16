@@ -17,6 +17,11 @@ namespace WebApplication3
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserName"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+
             this.GridView1.Visible = false;
             if (!IsPostBack)
             {

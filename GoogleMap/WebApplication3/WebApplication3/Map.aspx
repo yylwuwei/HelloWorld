@@ -227,13 +227,13 @@
         //添加新标记
         function addMarker(location) {
             if (lenArray.length == 0) {
-                var icon = "http://b259.photo.store.qq.com/psb?/V12hQgmW13ePD6/Z8f42qJ1d4Eu9Wsgc6Facsirxp2FqpqRJP69*4ZzgV0!/b/dGXbZJrELgAA&bo=GAAoAAAAAAADABU!&rf=photoDetail";
+                var icon = "Image/hongse.png";
             } else {
 
                 if (lenArray.length >= 2) {
                     marker.setMap(null);
                 }
-                var icon = "http://b259.photo.store.qq.com/psb?/V12hQgmW13ePD6/Z8f42qJ1d4Eu9Wsgc6Facsirxp2FqpqRJP69*4ZzgV0!/b/dGXbZJrELgAA&bo=GAAoAAAAAAADABU!&rf=photoDetail";
+                var icon = "Image/hongse.png";
             }
             //标记选项
             var myOptions = {

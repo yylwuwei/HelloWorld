@@ -87,6 +87,13 @@
     <Compile Include="Edit.aspx.designer.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GetPos.aspx.cs">
+      <DependentUpon>GetPos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetPos.aspx.designer.cs">
+      <DependentUpon>GetPos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Handler1.ashx.cs">
       <DependentUpon>Handler1.ashx</DependentUpon>
     </Compile>
@@ -123,6 +130,7 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="Edit.aspx" />
+    <Content Include="GetPos.aspx" />
     <Content Include="Handler1.ashx" />
     <Content Include="Image\hongse.png" />
     <Content Include="Image\huise.png" />

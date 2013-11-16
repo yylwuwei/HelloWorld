@@ -61,6 +61,9 @@
         <br />
         <br />
         <a href="UserEdit.aspx">点击进入用户信息编辑页</a>
+        <br />
+        <br />
+        <a href="GetPos.aspx">点击进入获取经纬度信息页</a>
 
     </div>
     </form>

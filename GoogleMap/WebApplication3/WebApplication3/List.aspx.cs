@@ -70,5 +70,20 @@ namespace WebApplication3
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
         }
+
+        protected void btnSaveEx_Click(object sender, EventArgs e)
+        {
+            string strID = "";
+            int iIndex = GridView1.SelectedIndex;
+            if (iIndex != -1)
+            {
+                strID = GridView1.DataKeys[iIndex][0].ToString();
+                Response.Redirect("Admin.aspx?type=saveEx&strID=" + strID);
+            }
+            else
+            {
+                Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>alert('您必须先在上表中选择某个告警项！');</script>");
+            }
+        }
     }
 }

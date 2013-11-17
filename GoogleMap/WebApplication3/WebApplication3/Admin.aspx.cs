@@ -31,12 +31,26 @@ namespace WebApplication3
                 this.RadioButtonList1.Items.Add(new ListItem("与失败预告同时显示的成功报告", "4"));
                 RadioButtonList1.SelectedIndex = 0;
                 this.btnSave.Visible = false;
-                this.Button1.Visible = true;
+                this.Button1.Visible = false;
+
+                if (Request.QueryString["strID"] == null)
+                {
+                    lblTitle.Text = "新建";
+                    this.Button1.Visible = true;
+                }
+                else if (Request.QueryString["strID"] != null && Request.QueryString["type"] != null)
+                {
+                    lblTitle.Text = "另存为";
+                    this.Button1.Visible = true;
+                }
+                else if (Request.QueryString["strID"] != null && Request.QueryString["type"] == null)
+                {
+                    lblTitle.Text = "编辑";
+                    this.btnSave.Visible = true;
+                }
+                
                 if (Request.QueryString["strID"] != null)
                 {
-                    this.btnSave.Visible = true;
-                    this.Button1.Visible = false;
-                    lblTitle.Text = "编辑";
                     strID = Request.QueryString["strID"].ToString();
                     string connStr = "Data Source=124.248.237.50;Initial Catalog=sqlybsp;Persist Security Info=True;User ID=sqlybsp;Password=gezhi";
                     DataTable dt = new DataTable();

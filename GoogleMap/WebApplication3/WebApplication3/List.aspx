@@ -16,7 +16,7 @@
             AllowSorting="True" Width="80%" BackColor="#DEBA84" 
             BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" 
             onrowcommand="GridView1_RowCommand" 
-            onrowdatabound="GridView1_RowDataBound">
+            onrowdatabound="GridView1_RowDataBound" PageSize="20">
             <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
@@ -49,10 +49,11 @@
             
             <table border="0" cellspacing="0" cellpadding="0" width="100%">
         	<tr>
-        		<td width="300px"> 
+        		<td width="400px"> 
                     <asp:Button ID="btnNew" runat="server" Text=" 新 增 " onclick="btnNew_Click" />&nbsp; &nbsp; 
                     <asp:Button ID="btnEdit" runat="server" Text=" 修 改 " onclick="btnEdit_Click" />&nbsp; &nbsp;
-                     <asp:Button ID="btnDel" runat="server" Text=" 删 除 " onclick="btnDel_Click" /></td><td>注：修改和删除告警点，需要先在上表中选中某行！</td>
+                     <asp:Button ID="btnDel" runat="server" Text=" 删 除 " onclick="btnDel_Click" />&nbsp; &nbsp;
+                    <asp:Button ID="btnSaveEx" runat="server" Text="另存为" onclick="btnSaveEx_Click" /></td><td>注：修改、删除、另存为 告警点，需要先在上表中选中某行！</td>
         	</tr>
         </table>
         

@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
 using System.Web.Script.Serialization;
+using System.Configuration;
 
 namespace WebApplication3
 {
@@ -24,7 +25,7 @@ namespace WebApplication3
 
             DataTable dt = new DataTable();
 
-            string connStr = "Data Source=124.248.237.50;Initial Catalog=sqlybsp;Persist Security Info=True;User ID=sqlybsp;Password=gezhi";
+            string connStr = ConfigurationManager.ConnectionStrings["sqlybspConnectionString"].ConnectionString;
 
             SqlConnection conn = new SqlConnection(connStr);
 

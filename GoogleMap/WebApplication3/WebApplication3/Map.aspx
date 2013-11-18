@@ -24,8 +24,7 @@
         var yySucMarkerArray = new Array();
         var yyFailMarkerArray = new Array();
         var yyFailSucMarkerArray = new Array();
-        var yyCurType = "nono";
-        
+        var yyCurType = "nono";        
         
         var yyPosArray = new Array(); //可以删掉
         var yyContentArray = new Array();
@@ -34,7 +33,6 @@
         var sucIcon = "Image/huangse.png";
         var failIcon = "Image/huise.png";
         var failSucIcon = "Image/hongse.png";
-        
         
         var yyIcon = "http://so.redocn.com/images/redocn/zhuce2.jpg";
         var yyContentStr = "hello,MM";
@@ -398,6 +396,12 @@
                     }
                 }
             }
+            else {
+                //用于双击当前行隐藏
+                //accordion_body.slideUp('normal');
+                //$(this).removeClass('active');
+            }
+            
         });
 
         $("li ul li").click(function() {

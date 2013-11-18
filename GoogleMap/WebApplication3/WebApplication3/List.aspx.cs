@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Configuration;
 
 namespace WebApplication3
 {
@@ -48,7 +49,7 @@ namespace WebApplication3
             {
                 strID = GridView1.DataKeys[iIndex][0].ToString();
                 //Response.Redirect("Admin.aspx?strID=" + strID);
-                string connStr = "Data Source=124.248.237.50;Initial Catalog=sqlybsp;Persist Security Info=True;User ID=sqlybsp;Password=gezhi";
+                string connStr = ConfigurationManager.ConnectionStrings["sqlybspConnectionString"].ConnectionString;
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();
 

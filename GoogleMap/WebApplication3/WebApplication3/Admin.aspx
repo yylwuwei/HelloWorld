@@ -9,7 +9,7 @@
     #GridView1 TD{word-break:break-all; width:100px;}
     </style>
 </head>
-<body>
+<body> 
     <form id="form1" runat="server">
     <div>
 <!--     <h1>地图后台管理--告警信息点查询</h1> -->

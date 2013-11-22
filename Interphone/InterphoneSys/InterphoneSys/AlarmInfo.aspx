@@ -86,9 +86,9 @@
         {
             font-size: 12px;
         }
-        
+
         #divContainer{margin:0px auto; width:100%;}
-        #divTitle{height:70px; margin-left:30px; margin-top:0px; }
+        #divTitle{height:70px; margin-left:30px; margin-top:0px; color:#005831;}
         #divContent{height:500px; margin-left:30px; margin-top:0px; }
     </style>
 </head>

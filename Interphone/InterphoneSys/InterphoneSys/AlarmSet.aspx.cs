@@ -11,9 +11,9 @@ namespace InterphoneSys
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DropDownList1.Items.Add("基站1");
-            DropDownList1.Items.Add("基站2");
-            DropDownList1.Items.Add("基站3");
+            DropDownList1.Items.Add("基 站  1");
+            DropDownList1.Items.Add("基 站  2");
+            DropDownList1.Items.Add("基 站  3");
         }
     }
 }

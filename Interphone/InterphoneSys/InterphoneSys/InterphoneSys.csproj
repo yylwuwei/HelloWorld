@@ -56,6 +56,8 @@
     <Content Include="AlarmInfo.aspx" />
     <Content Include="AlarmSet.aspx" />
     <Content Include="BSInfo.aspx" />
+    <Content Include="Building.aspx" />
+    <Content Include="CallInfo.aspx" />
     <Content Include="CSS\admin.css" />
     <Content Include="Default.aspx" />
     <Content Include="Images\admin_p.gif" />
@@ -105,6 +107,20 @@
     </Compile>
     <Compile Include="BSInfo.aspx.designer.cs">
       <DependentUpon>BSInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Building.aspx.cs">
+      <DependentUpon>Building.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Building.aspx.designer.cs">
+      <DependentUpon>Building.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CallInfo.aspx.cs">
+      <DependentUpon>CallInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CallInfo.aspx.designer.cs">
+      <DependentUpon>CallInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>

@@ -11,6 +11,15 @@
     </style>
 
     <script language="javascript">
+        var totalType = 5;
+        
+        function LeftInit() {
+            for(i = 1; i <= totalType; i++) {
+                childObj = document.getElementById("child" + i);
+                childObj.style.display = 'block';
+            }
+        }
+        
         function expand(el) {
             childObj = document.getElementById("child" + el);
 
@@ -25,7 +34,7 @@
     </script>
 
 </head>
-<body>
+<body onload="LeftInit()">
     <table height="850px" cellspacing="0" cellpadding="0" width="150px" background="images/menu_bg.jpg"
         border="0">
         <tr>
@@ -70,7 +79,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="BSInfo.aspx" target="main">通话信息</a>
+                            <a class="menuChild" href="Building.aspx" target="main">通话信息</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -96,7 +105,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">基站信息</a>
+                            <a class="menuChild" href="BSInfo.aspx" target="main">基站信息管理</a>
                         </td>
                     </tr>
                     <tr height="20">
@@ -104,7 +113,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">IP参数设置</a>
+                            <a class="menuChild" href="Building.aspx" target="main">IP参数设置</a>
                         </td>
                     </tr>
                     <tr height="20">
@@ -112,7 +121,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">告警参数设置</a>
+                            <a class="menuChild" href="AlarmSet.aspx" target="main">告警参数设置</a>
                         </td>
                     </tr>
                     <tr height="20">
@@ -120,7 +129,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">状态参数设置</a>
+                            <a class="menuChild" href="Building.aspx" target="main">状态参数设置</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -146,7 +155,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">ID码管理</a>
+                            <a class="menuChild" href="Building.aspx" target="main">ID码管理</a>
                         </td>
                     </tr>
                     <tr height="20">
@@ -154,7 +163,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">中心网络设置</a>
+                            <a class="menuChild" href="Building.aspx" target="main">中心网络设置</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -180,7 +189,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">用户增删</a>
+                            <a class="menuChild" href="Building.aspx" target="main">用户增删</a>
                         </td>
                     </tr>
                     <tr height="20">
@@ -188,7 +197,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">用户查询</a>
+                            <a class="menuChild" href="Building.aspx" target="main">用户查询</a>
                         </td>
                     </tr>
                     <tr height="4">
@@ -214,7 +223,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">系统日志</a>
+                            <a class="menuChild" href="Building.aspx" target="main">系统日志</a>
                         </td>
                     </tr>
                     <tr height="20">
@@ -222,7 +231,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="#" target="main">系统帮助</a>
+                            <a class="menuChild" href="Building.aspx" target="main">系统帮助</a>
                         </td>
                     </tr>
                     <tr height="4">

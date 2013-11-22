@@ -58,6 +58,26 @@
     <Content Include="BSInfo.aspx" />
     <Content Include="CSS\admin.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\admin_p.gif" />
+    <Content Include="Images\bt_login.gif" />
+    <Content Include="Images\header_bg.jpg" />
+    <Content Include="Images\header_left.jpg" />
+    <Content Include="Images\header_right.jpg" />
+    <Content Include="Images\login_1.jpg" />
+    <Content Include="Images\login_2.jpg" />
+    <Content Include="Images\login_3.jpg" />
+    <Content Include="Images\login_4.jpg" />
+    <Content Include="Images\login_5.jpg" />
+    <Content Include="Images\login_6.gif" />
+    <Content Include="Images\login_6.png" />
+    <Content Include="Images\Map.jpg" />
+    <Content Include="Images\menu_bg.jpg" />
+    <Content Include="Images\menu_bt.jpg" />
+    <Content Include="Images\menu_icon.gif" />
+    <Content Include="Images\shadow_bg.jpg" />
+    <Content Include="Images\station1.jpg" />
+    <Content Include="Images\title_bg1.jpg" />
+    <Content Include="Images\title_bg2.jpg" />
     <Content Include="LeftMenu.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MapControl.aspx" />
@@ -125,6 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="JS\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

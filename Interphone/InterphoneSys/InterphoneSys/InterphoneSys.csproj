@@ -80,6 +80,7 @@
     <Content Include="Images\station1.jpg" />
     <Content Include="Images\title_bg1.jpg" />
     <Content Include="Images\title_bg2.jpg" />
+    <Content Include="IPSet.aspx" />
     <Content Include="LeftMenu.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MapControl.aspx" />
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IPSet.aspx.cs">
+      <DependentUpon>IPSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IPSet.aspx.designer.cs">
+      <DependentUpon>IPSet.aspx</DependentUpon>
     </Compile>
     <Compile Include="LeftMenu.aspx.cs">
       <DependentUpon>LeftMenu.aspx</DependentUpon>

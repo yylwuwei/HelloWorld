@@ -113,7 +113,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="Building.aspx" target="main">IP参数设置</a>
+                            <a class="menuChild" href="IPSet.aspx" target="main">IP参数设置</a>
                         </td>
                     </tr>
                     <tr height="20">

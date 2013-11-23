@@ -79,7 +79,7 @@
                             <img height="9" src="images/menu_icon.gif" width="9">
                         </td>
                         <td>
-                            <a class="menuChild" href="Building.aspx" target="main">通话信息</a>
+                            <a class="menuChild" href="CallInfo.aspx" target="main">通话信息</a>
                         </td>
                     </tr>
                     <tr height="4">

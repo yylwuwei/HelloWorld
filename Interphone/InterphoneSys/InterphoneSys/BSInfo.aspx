@@ -5,6 +5,26 @@
 <head runat="server">
     <title></title>
     <style type="text/css" media="screen">
+                #divContent
+        {
+            margin: 25px 0px 0px 25px;
+        }
+        #divTitle
+        {
+            color: #005831;
+        }
+        td{ text-align:left; }
+        #tableSel td
+        {
+            padding:0px 0px;	
+        }
+        body
+        {
+            font: normal 11px auto "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
+            color: #4f6b72;
+            background: #E6EAE9;
+        }
+
         table td
         {
             border: #000000 1px solid;
@@ -18,14 +38,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+        <div id="divContent">
+        <div id="divTitle">
+            <h1>
+                基站信息管理</h1>
+        </div>
+        <hr />
+        <br />
+        <div>
         <table class="tableborder">
             <tr>
                 <td>
                     <table>
                         <tr>
                             <td>
-                                <asp:ListBox ID="ListBox1" runat="server" Height="295px" Width="293px">
+                                <asp:ListBox ID="ListBox2" runat="server" Height="295px" Width="293px">
                                     <asp:ListItem>基站1</asp:ListItem>
                                     <asp:ListItem>基站2</asp:ListItem>
                                     <asp:ListItem>基站3</asp:ListItem>
@@ -39,9 +66,9 @@
                         </tr>
                         <tr>
                             <td>
-                                 <br /><input id="Button1" type="button" value=" 添 加 " /> 
+                                 <br /><input id="Button3" type="button" value=" 添 加 " onclick="alert('此功能暂未添加！');" /> 
                                 &nbsp; &nbsp; &nbsp;
-                                <input id="Button2" type="button" value=" 删 除 " />
+                                <input id="Button4" type="button" value=" 删 除 " onclick="alert('此功能暂未添加！');"/>
                                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
                             </td>
                         </tr>
@@ -67,6 +94,7 @@
                 </td>
             </tr>
         </table>
+        </div>
     </div>
     </form>
 </body>

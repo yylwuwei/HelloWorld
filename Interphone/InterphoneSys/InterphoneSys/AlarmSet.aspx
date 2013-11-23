@@ -11,7 +11,7 @@
         }
         #divTitle
         {
-        	color:#005831;
+            color: #005831;
         }
         .tableContent
         {
@@ -19,152 +19,155 @@
         }
         #tableSel td
         {
-            padding:7px 0px;	
+            padding:4px 0px;
+            font-size: 16px;
+            font: SimSun;
+            color: Black;
         }
         #btnSave{ font-size:15px; }
+        
+        body
+        {
+            font: normal 11px auto "Trebuchet MS" , Verdana, Arial, Helvetica, sans-serif;
+            color: #4f6b72;
+            background: #E6EAE9;
+        }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div id="divContent">
         <div id="divTitle">
-            <h2>
+            <h1>
                 告警参数设置</h1>
         </div>
         <hr />
         <br />
         <div>
-            <table>
-                <tr>
-                    <td>
-                        请选择基站：
+        <div id="pTitle">请选择基站：
                         <asp:DropDownList ID="DropDownList1" runat="server" Height="22px" Width="160px">
-                        </asp:DropDownList>
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-            </table>
-            <br />
+                        </asp:DropDownList></div>
+                        <br />
             <table id="tableSel" class="tableContent">
                 <tr>
                     <td style="width: 200px;">
-                        <input id="Checkbox1" type="checkbox" />人生报警
+                        <input id="Checkbox31" type="checkbox" />人生报警
                     </td>
                     <td>
-                        <input id="Checkbox2" type="checkbox" />电源报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox4" type="checkbox" />发射报警
-                    </td>
-                    <td>
-                        <input id="Checkbox5" type="checkbox" />接收报警
+                        <input id="Checkbox32" type="checkbox" />电源报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox7" type="checkbox" />电流报警
+                        <input id="Checkbox33" type="checkbox" />发射报警
                     </td>
                     <td>
-                        <input id="Checkbox8" type="checkbox" />信号报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox3" type="checkbox" />人生报警
-                    </td>
-                    <td>
-                        <input id="Checkbox6" type="checkbox" />电源报警
+                        <input id="Checkbox34" type="checkbox" />接收报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox9" type="checkbox" />发射报警
+                        <input id="Checkbox35" type="checkbox" />电流报警
                     </td>
                     <td>
-                        <input id="Checkbox10" type="checkbox" />接收报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox11" type="checkbox" />电流报警
-                    </td>
-                    <td>
-                        <input id="Checkbox12" type="checkbox" />信号报警
+                        <input id="Checkbox36" type="checkbox" />信号报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox13" type="checkbox" />人生报警
+                        <input id="Checkbox37" type="checkbox" />人生报警
                     </td>
                     <td>
-                        <input id="Checkbox14" type="checkbox" />电源报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox15" type="checkbox" />发射报警
-                    </td>
-                    <td>
-                        <input id="Checkbox16" type="checkbox" />接收报警
+                        <input id="Checkbox38" type="checkbox" />电源报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox17" type="checkbox" />电流报警
+                        <input id="Checkbox39" type="checkbox" />发射报警
                     </td>
                     <td>
-                        <input id="Checkbox18" type="checkbox" />信号报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox19" type="checkbox" />人生报警
-                    </td>
-                    <td>
-                        <input id="Checkbox20" type="checkbox" />电源报警
+                        <input id="Checkbox40" type="checkbox" />接收报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox21" type="checkbox" />发射报警
+                        <input id="Checkbox41" type="checkbox" />电流报警
                     </td>
                     <td>
-                        <input id="Checkbox22" type="checkbox" />接收报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox23" type="checkbox" />电流报警
-                    </td>
-                    <td>
-                        <input id="Checkbox24" type="checkbox" />信号报警
+                        <input id="Checkbox42" type="checkbox" />信号报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox25" type="checkbox" />人生报警
+                        <input id="Checkbox43" type="checkbox" />人生报警
                     </td>
                     <td>
-                        <input id="Checkbox26" type="checkbox" />电源报警
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input id="Checkbox27" type="checkbox" />发射报警
-                    </td>
-                    <td>
-                        <input id="Checkbox28" type="checkbox" />接收报警
+                        <input id="Checkbox44" type="checkbox" />电源报警
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <input id="Checkbox29" type="checkbox" />电流报警
+                        <input id="Checkbox45" type="checkbox" />发射报警
                     </td>
                     <td>
-                        <input id="Checkbox30" type="checkbox" />信号报警
+                        <input id="Checkbox46" type="checkbox" />接收报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox47" type="checkbox" />电流报警
+                    </td>
+                    <td>
+                        <input id="Checkbox48" type="checkbox" />信号报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox49" type="checkbox" />人生报警
+                    </td>
+                    <td>
+                        <input id="Checkbox50" type="checkbox" />电源报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox51" type="checkbox" />发射报警
+                    </td>
+                    <td>
+                        <input id="Checkbox52" type="checkbox" />接收报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox53" type="checkbox" />电流报警
+                    </td>
+                    <td>
+                        <input id="Checkbox54" type="checkbox" />信号报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox55" type="checkbox" />人生报警
+                    </td>
+                    <td>
+                        <input id="Checkbox56" type="checkbox" />电源报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox57" type="checkbox" />发射报警
+                    </td>
+                    <td>
+                        <input id="Checkbox58" type="checkbox" />接收报警
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="Checkbox59" type="checkbox" />电流报警
+                    </td>
+                    <td>
+                        <input id="Checkbox60" type="checkbox" />信号报警
                     </td>
                 </tr>
                 <tr>
@@ -178,7 +181,7 @@
                 <table border="0" cellspacing="0" cellpadding="0" width="100%">
                 	<tr>
                 		<td width="220px"> &nbsp;</td>
-                		<td><input type="button" id="btnSave"  value=" 保 存 " onclick="alert('保存成功！');" style="height: 26px; width: 76px" /></td>
+                		<td><input type="button" id="Button1"  value=" 保 存 " onclick="alert('保存成功！');" style="height: 26px; width: 76px" /></td>
                 		<!-- <td>&nbsp;</td> -->
                 	</tr>
                 </table>

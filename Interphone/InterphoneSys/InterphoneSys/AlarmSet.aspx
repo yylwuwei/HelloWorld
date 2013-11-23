@@ -20,11 +20,22 @@
         #tableSel td
         {
             padding:4px 0px;
-            font-size: 16px;
+            font-size: 14px;
             font: SimSun;
             color: Black;
         }
         #btnSave{ font-size:15px; }
+        
+        #divSelTitle 
+        {
+        	font-size: 15px;
+        	color: Black;
+        	}
+        
+        #divBtnSave
+        {
+        	margin-left:210px;
+        	}
         
         body
         {
@@ -45,8 +56,8 @@
         <hr />
         <br />
         <div>
-        <div id="pTitle">请选择基站：
-                        <asp:DropDownList ID="DropDownList1" runat="server" Height="22px" Width="160px">
+        <div id="divSelTitle">请选择基站：
+                        <asp:DropDownList ID="DropDownList1" runat="server" Height="23px" Width="160px">
                         </asp:DropDownList></div>
                         <br />
             <table id="tableSel" class="tableContent">
@@ -170,23 +181,11 @@
                         <input id="Checkbox60" type="checkbox" />信号报警
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        &nbsp;
-                    </td>
-                    <td>
-                    </td>
-                </tr>
-                <tr>
-                <table border="0" cellspacing="0" cellpadding="0" width="100%">
-                	<tr>
-                		<td width="220px"> &nbsp;</td>
-                		<td><input type="button" id="Button1"  value=" 保 存 " onclick="alert('保存成功！');" style="height: 26px; width: 76px" /></td>
-                		<!-- <td>&nbsp;</td> -->
-                	</tr>
-                </table>
-                </tr>
             </table>
+            <br />
+            <div id="divBtnSave">
+            <input type="button" id="Button1"  value=" 保 存 " onclick="alert('保存成功！');" style="height: 26px; width: 76px" />
+            </div>
         </div>
     </div>
     </form>

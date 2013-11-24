@@ -11,7 +11,7 @@ namespace InterphoneSys
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ListBox1.SelectedIndex = 2;
         }
     }
 }

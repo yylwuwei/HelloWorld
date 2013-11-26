@@ -65,6 +65,9 @@
         <br />
         <br />
         <a href="GetPos.aspx">点击进入获取经纬度信息页</a>
+        <br />
+        <br />
+        <a href="DownJpgUI/DownJpgList.aspx">点击进入自动下载图片列表页</a>
 
     </div>
     </form>

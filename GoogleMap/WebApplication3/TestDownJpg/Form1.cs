@@ -66,71 +66,84 @@ namespace TestDownJpg
 
             while (true)
             {
-                bCheckStart = GetRunState();
-
-                if (!bCheckStart)
+                try
                 {
-                    bCheckRestart = true;
-                    Thread.Sleep(2000);
-                    continue;
-                }
+                    bCheckStart = GetRunState();
 
-                if (bCheckStart && bCheckRestart)
-                {
-                    jpgUrlList.Clear();
-                    DataTable dt = new DataTable();
-                    SqlConnection conn = new SqlConnection(connStr);
-                    conn.Open();
-                    string sql = "select * from DownJpgUrlList where IsValid = 'True'";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    SqlDataReader sdr = cmd.ExecuteReader();
-                    dt.Load(sdr);
-                    for (int j = 0; j < dt.Rows.Count; j++)
+                    if (!bCheckStart)
                     {
-                        JpgUrlStruct jpgUrl = new JpgUrlStruct();
-                        jpgUrl.url = dt.Rows[j]["JpgUrl"].ToString();
-                        jpgUrl.folderName = dt.Rows[j]["FolderName"].ToString();
-                        jpgUrl.timeCycle = Convert.ToDouble(dt.Rows[j]["TimeCycle"].ToString());
-                        jpgUrl.nextTimeToRun = DateTime.Now;
-                        jpgUrlList.Add(jpgUrl);
+                        bCheckRestart = true;
+                        Thread.Sleep(1000);
+                        continue;
                     }
-                    bCheckRestart = false;
-                }
 
-                if (bCheckStart)
-                {
-                    WebClient myWebClient = new WebClient();
-                    int i = 0;
-                    foreach (JpgUrlStruct jpgObj in jpgUrlList)
+                    if (bCheckStart && bCheckRestart)
                     {
-                        if (jpgObj.nextTimeToRun <= DateTime.Now)
+                        jpgUrlList.Clear();
+                        DataTable dt = new DataTable();
+                        SqlConnection conn = new SqlConnection(connStr);
+                        conn.Open();
+                        string sql = "select * from DownJpgUrlList where IsValid = 'True'";
+                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        SqlDataReader sdr = cmd.ExecuteReader();
+                        dt.Load(sdr);
+                        for (int j = 0; j < dt.Rows.Count; j++)
                         {
-                            string url = jpgObj.url;
-                            string newFileName = DateTime.Now.ToString("yyyyMMddhhmmss");
-                            string strRootPath = Environment.CurrentDirectory;
-                            string partPath = @"" + strRootPath + "\\DownJpg\\" + jpgObj.folderName;
-                            if (!Directory.Exists(partPath))
-                            {
-                                Directory.CreateDirectory(partPath);
-                            }
-                            string filePath = partPath + "\\" + newFileName + ".jpg";
-                            try
-                            {
-                                myWebClient.DownloadFile(url, filePath);
-                                //System.Uri uri = new System.Uri(url);
-                                //myWebClient.DownloadFileAsync(uri, filePath);
-                            }
-                            catch (System.Exception ex)
-                            {
-                                //MessageBox.Show(ex.ToString());
-                            }
-                            jpgUrlList[i].nextTimeToRun = jpgUrlList[i].nextTimeToRun.AddHours(jpgUrlList[i].timeCycle);
+                            JpgUrlStruct jpgUrl = new JpgUrlStruct();
+                            jpgUrl.url = dt.Rows[j]["JpgUrl"].ToString();
+                            jpgUrl.folderName = dt.Rows[j]["FolderName"].ToString();
+                            jpgUrl.timeCycle = Convert.ToDouble(dt.Rows[j]["TimeCycle"].ToString());
+                            jpgUrl.nextTimeToRun = DateTime.Now;
+                            jpgUrlList.Add(jpgUrl);
                         }
-                        i++;
+                        bCheckRestart = false;
                     }
-                }
 
-                Thread.Sleep(2000);
+                    if (bCheckStart)
+                    {
+                        WebClient myWebClient = new WebClient();
+                        int i = 0;
+                        foreach (JpgUrlStruct jpgObj in jpgUrlList)
+                        {
+                            if (jpgObj.nextTimeToRun <= DateTime.Now)
+                            {
+                                string url = jpgObj.url;
+                                string newFileName = DateTime.Now.ToString("yyyyMMddhhmmss");
+                                string strRootPath = Environment.CurrentDirectory;
+                                string rootFolderPath = @"" + strRootPath;
+                                if (!Directory.Exists(rootFolderPath))
+                                {
+                                    Directory.CreateDirectory(rootFolderPath);
+                                }
+                                string partPath = @"" + strRootPath + "\\DownJpg\\" + jpgObj.folderName;
+                                if (!Directory.Exists(partPath))
+                                {
+                                    Directory.CreateDirectory(partPath);
+                                }
+                                string filePath = partPath + "\\" + newFileName + ".jpg";
+                                try
+                                {
+                                    myWebClient.DownloadFile(url, filePath);
+                                    //System.Uri uri = new System.Uri(url);
+                                    //myWebClient.DownloadFileAsync(uri, filePath);
+                                }
+                                catch (System.Exception ex)
+                                {
+                                    MessageBox.Show(ex.ToString());
+                                }
+                                jpgUrlList[i].nextTimeToRun = jpgUrlList[i].nextTimeToRun.AddHours(jpgUrlList[i].timeCycle);
+                            }
+                            i++;
+                        }
+                    }
+
+                    Thread.Sleep(1000);
+
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
     }

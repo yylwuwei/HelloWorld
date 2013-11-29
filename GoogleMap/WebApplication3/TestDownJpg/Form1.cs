@@ -31,7 +31,6 @@ namespace TestDownJpg
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             threadObj.Abort();
-
         }
     }
 
@@ -57,7 +56,10 @@ namespace TestDownJpg
             SqlCommand cmd = new SqlCommand(sql, conn);
             SqlDataReader sdr = cmd.ExecuteReader();
             dt.Load(sdr);
-            return Convert.ToBoolean(dt.Rows[0]["IsRun"].ToString());
+            bool bRet = Convert.ToBoolean(dt.Rows[0]["IsRun"].ToString());
+            sdr.Close();
+            conn.Close();
+            return bRet;
         }
 
         public void DownJpg()
@@ -97,17 +99,19 @@ namespace TestDownJpg
                             jpgUrlList.Add(jpgUrl);
                         }
                         bCheckRestart = false;
+                        sdr.Close();
+                        conn.Close();
                     }
 
                     if (bCheckStart)
                     {
                         WebClient myWebClient = new WebClient();
                         int i = 0;
-                        foreach (JpgUrlStruct jpgObj in jpgUrlList)
+                        for (int k = 0; k < jpgUrlList.Count;  )
                         {
-                            if (jpgObj.nextTimeToRun <= DateTime.Now)
+                            if (jpgUrlList[i].nextTimeToRun <= DateTime.Now)
                             {
-                                string url = jpgObj.url;
+                                string url = jpgUrlList[i].url;
                                 string newFileName = DateTime.Now.ToString("yyyyMMddhhmmss");
                                 string strRootPath = Environment.CurrentDirectory;
                                 string rootFolderPath = @"" + strRootPath;
@@ -115,7 +119,7 @@ namespace TestDownJpg
                                 {
                                     Directory.CreateDirectory(rootFolderPath);
                                 }
-                                string partPath = @"" + strRootPath + "\\DownJpg\\" + jpgObj.folderName;
+                                string partPath = @"" + strRootPath + "\\DownJpg\\" + jpgUrlList[i].folderName;
                                 if (!Directory.Exists(partPath))
                                 {
                                     Directory.CreateDirectory(partPath);
@@ -129,20 +133,26 @@ namespace TestDownJpg
                                 }
                                 catch (System.Exception ex)
                                 {
-                                    MessageBox.Show(ex.ToString());
+                                    //MessageBox.Show(ex.ToString());
                                 }
                                 jpgUrlList[i].nextTimeToRun = jpgUrlList[i].nextTimeToRun.AddHours(jpgUrlList[i].timeCycle);
                             }
-                            i++;
+                            if (!GetRunState())
+                            {
+                                k = k + jpgUrlList.Count; //需要结束本次循环
+                            }
+                            else
+                            {
+                                k++;
+                                i++;
+                            }
                         }
                     }
-
                     Thread.Sleep(1000);
-
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }

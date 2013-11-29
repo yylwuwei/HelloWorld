@@ -34,7 +34,9 @@
         	<tr>
         		<td>
                     </td><td><asp:Button ID="btnSave" runat="server" Text=" 保 存 " 
-                        onclick="btnSave_Click" /></td>
+                        onclick="btnSave_Click" />
+                    <asp:Button ID="btnNew" runat="server" onclick="btnNew_Click" Text=" 新 建 " />
+                </td>
         	</tr>        	        	
         </table>
         <br />

@@ -28,11 +28,14 @@ namespace WebApplication3.DownJpgUI
                 if (Request.QueryString["strID"] == null)
                 {
                     lblTitle.Text = "新建一个图片抓取";
+                    btnNew.Visible = true;
+                    btnSave.Visible = false;
                 }
                 else
                 {
                     lblTitle.Text = "编辑一个图片抓取";
                     this.btnSave.Visible = true;
+                    btnNew.Visible = false;
                 }
 
                 if (Request.QueryString["strID"] != null)
@@ -99,23 +102,71 @@ namespace WebApplication3.DownJpgUI
                 SqlConnection conn = new SqlConnection(connStr);
                 conn.Open();
 
-                //new
-                if (strID.Length == 0)
+//                 //new
+//                 if (strID.Length == 0)
+//                 {
+//                     int iCount = GetNextID();
+//                     string sql2 = "insert into DownJpgUrlList (ID, JpgUrl, FolderName, TimeCycle, IsValid) values(" +
+//                         iCount + ",'" + txtUrl.Text.Trim() + "','" + txtFolderName.Text.Trim() + "'," + float.Parse(txtTime.Text.Trim()) + ",'True')";
+//                     SqlCommand cmd2 = new SqlCommand(sql2, conn);
+//                     int ret = cmd2.ExecuteNonQuery();
+//                     Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script>alert('恭喜添加成功！');self.location='DownJpgList.aspx';</script>");
+//                 }
+//                 else //edit
+//                 {
+                    string sql = "update DownJpgUrlList set JpgUrl='" + txtUrl.Text.Trim() + "', FolderName='" + txtFolderName.Text.Trim() + "', TimeCycle=" + txtTime.Text.Trim() + " where ID=" + strID;
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    int ret = cmd.ExecuteNonQuery();
+                    Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script>alert('恭喜编辑成功！');self.location='DownJpgList.aspx';</script>");
+//                 }
+                conn.Close();
+            }
+            catch (System.Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>alert('请检查，您的填写格式有误，请正确填写表单！');</script>");
+            }
+
+        }
+
+        protected void btnNew_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtTime.Text.Trim().Length == 0 ||
+                    txtUrl.Text.Trim().Length == 0 ||
+                    txtFolderName.Text.Trim().Length == 0)
                 {
+                    Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>alert('表单必须全部填写完毕才能添加成功！');</script>");
+                    return;
+                }
+
+                float ff = float.Parse(txtTime.Text.Trim());
+                if (ff < 0.1 || ff > 48.0)
+                {
+                    Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>alert('时间范围必须在0.1~48小时之间！');</script>");
+                    return;
+                }
+
+                SqlConnection conn = new SqlConnection(connStr);
+                conn.Open();
+
+//                 //new
+//                 if (strID.Length == 0)
+//                 {
                     int iCount = GetNextID();
                     string sql2 = "insert into DownJpgUrlList (ID, JpgUrl, FolderName, TimeCycle, IsValid) values(" +
                         iCount + ",'" + txtUrl.Text.Trim() + "','" + txtFolderName.Text.Trim() + "'," + float.Parse(txtTime.Text.Trim()) + ",'True')";
                     SqlCommand cmd2 = new SqlCommand(sql2, conn);
                     int ret = cmd2.ExecuteNonQuery();
                     Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script>alert('恭喜添加成功！');self.location='DownJpgList.aspx';</script>");
-                }
-                else //edit
-                {
-                    string sql = "update DownJpgUrlList set JpgUrl='" + txtUrl.Text.Trim() + "', FolderName='" + txtFolderName.Text.Trim() + "', TimeCycle=" + txtTime.Text.Trim() + " where ID=" + strID;
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    int ret = cmd.ExecuteNonQuery();
-                    Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script>alert('恭喜编辑成功！');self.location='DownJpgList.aspx';</script>");
-                }
+//                 }
+//                 else //edit
+//                 {
+//                     string sql = "update DownJpgUrlList set JpgUrl='" + txtUrl.Text.Trim() + "', FolderName='" + txtFolderName.Text.Trim() + "', TimeCycle=" + txtTime.Text.Trim() + " where ID=" + strID;
+//                     SqlCommand cmd = new SqlCommand(sql, conn);
+//                     int ret = cmd.ExecuteNonQuery();
+//                     Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "", "<script>alert('恭喜编辑成功！');self.location='DownJpgList.aspx';</script>");
+//                 }
                 conn.Close();
             }
             catch (System.Exception ex)

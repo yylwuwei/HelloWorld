@@ -50,8 +50,6 @@
         <br />
         <hr />
         <br />
-<!--         当前开始时间：<asp:Label ID="lblStartTime" runat="server" Text="Label"></asp:Label> -->
-<!--         <br/><br/> -->
         <B>当前运行状态：</B><asp:Label ID="lblRunStart" runat="server" Text="Label"></asp:Label>
         <br /><br />
         <asp:Button ID="btnStart" runat="server" Text=" 开 始 抓 图 " 

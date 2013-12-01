@@ -14,7 +14,6 @@ using System.Collections;
 using System.Configuration;
 using System.Data;
 
-
 namespace WebApplication3.DownJpgUI
 {
     public partial class DownJpgList : System.Web.UI.Page
@@ -122,7 +121,6 @@ namespace WebApplication3.DownJpgUI
             }
             if (SetRunState(true))
             {
-                //lblStartTime.Text = DateTime.Now.ToString();
                 lblRunStart.Text = "已经开始，正在抓图";
                 Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>alert('成功开始抓图！');</script>");
             }
@@ -137,7 +135,6 @@ namespace WebApplication3.DownJpgUI
             }
             if (SetRunState(false))
             {
-                //lblStartTime.Text = "";
                 lblRunStart.Text = "已经结束，停止抓图";
                 Page.ClientScript.RegisterStartupScript(ClientScript.GetType(), "myscript", "<script>alert('成功停止抓图！');</script>");
             }

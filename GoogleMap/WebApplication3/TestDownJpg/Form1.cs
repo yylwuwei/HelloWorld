@@ -128,8 +128,6 @@ namespace TestDownJpg
                                 try
                                 {
                                     myWebClient.DownloadFile(url, filePath);
-                                    //System.Uri uri = new System.Uri(url);
-                                    //myWebClient.DownloadFileAsync(uri, filePath);
                                 }
                                 catch (System.Exception ex)
                                 {

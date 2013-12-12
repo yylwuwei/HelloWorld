@@ -189,6 +189,8 @@
     <Content Include="T2Admin\T2GetPos.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\type1.png" />
+    <Content Include="Image\type2.png" />
     <Content Include="T2Admin\T2Handle1.ashx" />
     <Content Include="T2Admin\T2List.aspx" />
     <Content Include="T2Admin\T2Login.aspx" />

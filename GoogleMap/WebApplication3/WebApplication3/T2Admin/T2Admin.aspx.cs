@@ -103,7 +103,7 @@ namespace WebApplication3.T2Admin
                 conn.Open();
 
                 DataTable dt = new DataTable();
-                string sql = "select * from MapTable";
+                string sql = "select * from T2_MapTable";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader sdr = cmd.ExecuteReader();
                 dt.Load(sdr);

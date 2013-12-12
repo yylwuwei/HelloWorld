@@ -24,6 +24,8 @@
         var yySucMarkerArray = new Array();
         var yyFailMarkerArray = new Array();
         var yyFailSucMarkerArray = new Array();
+        var yyType1Array = new Array();
+        var yyType2Array = new Array();
         var yyCurType = "nono";        
         
         var yyPosArray = new Array(); //可以删掉
@@ -33,6 +35,8 @@
         var sucIcon = "Image/huangse.png";
         var failIcon = "Image/huise.png";
         var failSucIcon = "Image/hongse.png";
+        var type1Icon = "Image/type1.png";
+        var type2Icon = "Image/type2.png";
         
         var yyIcon = "http://so.redocn.com/images/redocn/zhuce2.jpg";
         var yyContentStr = "hello,MM";
@@ -117,7 +121,7 @@
                 sucCount++;        
                 showLiID = sucCount;
             }
-            else if(type == "3" || type == "4") {
+            else if(type == "3" || type == "4" || type == "5" || type == "6") {
                 ulID = "ulIDTest3";
                 failCount++;
                 showLiID = failCount;
@@ -146,7 +150,9 @@
             yyNewMarkerArray = [];
             yySucMarkerArray = [];
             yyFailMarkerArray = [];
-            yyFailSucMarkerArray = [];            
+            yyFailSucMarkerArray = [];
+            yyType1Array = [];
+            yyType2Array = [];       
             yyPosArray = [];
             
             for (var i in yyDataJson) {
@@ -187,6 +193,24 @@
                         yyMarker.setMap(map);
                     }
                     yyFailSucMarkerArray.push(yyMarker);
+                }
+                else if (yyDataJson[i].Type == "5") {
+                yyMarker.setIcon(type1Icon);
+                yyMarker.setMap(null);
+                if (yyCurType == "failLi") {
+                    yyMarker.setMap(map);
+                }
+                yyType1Array.push(yyMarker);
+                
+                }
+                else if (yyDataJson[i].Type == "6") {
+                yyMarker.setIcon(type2Icon);
+                yyMarker.setMap(null);
+                if (yyCurType == "failLi") {
+                    yyMarker.setMap(map);
+                }
+                yyType2Array.push(yyMarker);
+                
                 }
                 
                 yyMarkerArray[i] = yyMarker;
@@ -393,6 +417,12 @@
                     }
                     for (i in yyFailSucMarkerArray) {
                         yyFailSucMarkerArray[i].setMap(map);
+                    }
+                    for (i in yyType1Array) {
+                        yyType1Array[i].setMap(map);
+                    }
+                    for (i in yyType2Array) {
+                        yyType2Array[i].setMap(map);
                     }
                 }
             }

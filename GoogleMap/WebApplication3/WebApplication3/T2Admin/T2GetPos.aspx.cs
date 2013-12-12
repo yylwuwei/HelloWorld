@@ -5,13 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace WebApplication3
+namespace WebApplication3.T2Admin
 {
-    public partial class Edit : System.Web.UI.Page
+    public partial class T2GetPos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["T2UserName"] == null)
+            {
+                Response.Redirect("T2Login.aspx");
+            }
         }
     }
 }

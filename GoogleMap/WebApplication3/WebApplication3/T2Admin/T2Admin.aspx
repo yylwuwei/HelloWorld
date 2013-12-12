@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="WebApplication3.Admin" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="T2Admin.aspx.cs" Inherits="WebApplication3.T2Admin.T2Admin" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
-<head runat="server">
-    <title></title>
+<head id="Head1" runat="server">
+    <title>T2Admin</title>
     <style type="text/css">
     #GridView1 TD{word-break:break-all; width:100px;}
     </style>
@@ -89,9 +89,9 @@
         <hr />
         <br />
         
-        <a href="List.aspx">点击返回后台列表页</a>
-        <br /><br />
-        <a href="UserEdit.aspx">点击进入用户编辑</a>
+        <a href="T2List.aspx">点击返回后台列表页</a>
+<!--         <br /><br /> -->
+<!--         <a href="T2UserEdit.aspx">点击进入用户编辑</a> -->
             
     </div>
     </form>

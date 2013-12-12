@@ -66,13 +66,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>
@@ -80,50 +73,19 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DownJpgUI\DownJpgEdit.aspx.cs">
+    <Compile Include="T2Admin\DownJpgUI\DownJpgEdit.aspx.cs">
       <DependentUpon>DownJpgEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DownJpgUI\DownJpgEdit.aspx.designer.cs">
+    <Compile Include="T2Admin\DownJpgUI\DownJpgEdit.aspx.designer.cs">
       <DependentUpon>DownJpgEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DownJpgUI\DownJpgList.aspx.cs">
+    <Compile Include="T2Admin\DownJpgUI\DownJpgList.aspx.cs">
       <DependentUpon>DownJpgList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="DownJpgUI\DownJpgList.aspx.designer.cs">
+    <Compile Include="T2Admin\DownJpgUI\DownJpgList.aspx.designer.cs">
       <DependentUpon>DownJpgList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Edit.aspx.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Edit.aspx.designer.cs">
-      <DependentUpon>Edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GetPos.aspx.cs">
-      <DependentUpon>GetPos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GetPos.aspx.designer.cs">
-      <DependentUpon>GetPos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Handler1.ashx.cs">
-      <DependentUpon>Handler1.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="List.aspx.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="List.aspx.designer.cs">
-      <DependentUpon>List.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Map.aspx.cs">
       <DependentUpon>Map.aspx</DependentUpon>
@@ -133,26 +95,104 @@
       <DependentUpon>Map.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserEdit.aspx.cs">
+    <Compile Include="T1Admin\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T1Admin\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T1Admin\GetPos.aspx.cs">
+      <DependentUpon>GetPos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T1Admin\GetPos.aspx.designer.cs">
+      <DependentUpon>GetPos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T1Admin\Handler1.ashx.cs">
+      <DependentUpon>Handler1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="T1Admin\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T1Admin\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T1Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T1Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T1Admin\UserEdit.aspx.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserEdit.aspx.designer.cs">
+    <Compile Include="T1Admin\UserEdit.aspx.designer.cs">
       <DependentUpon>UserEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T2Admin\T2Admin.aspx.cs">
+      <DependentUpon>T2Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T2Admin\T2Admin.aspx.designer.cs">
+      <DependentUpon>T2Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T2Admin\T2GetPos.aspx.cs">
+      <DependentUpon>T2GetPos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T2Admin\T2GetPos.aspx.designer.cs">
+      <DependentUpon>T2GetPos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T2Admin\T2Handle1.ashx.cs">
+      <DependentUpon>T2Handle1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="T2Admin\T2List.aspx.cs">
+      <DependentUpon>T2List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T2Admin\T2List.aspx.designer.cs">
+      <DependentUpon>T2List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T2Admin\T2Login.aspx.cs">
+      <DependentUpon>T2Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T2Admin\T2Login.aspx.designer.cs">
+      <DependentUpon>T2Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="T2Admin\T2UserEdit.aspx.cs">
+      <DependentUpon>T2UserEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="T2Admin\T2UserEdit.aspx.designer.cs">
+      <DependentUpon>T2UserEdit.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin.aspx" />
-    <Content Include="DownJpgUI\DownJpgEdit.aspx" />
-    <Content Include="DownJpgUI\DownJpgList.aspx" />
-    <Content Include="Edit.aspx" />
-    <Content Include="GetPos.aspx" />
-    <Content Include="Handler1.ashx" />
+    <Content Include="T2Admin\DownJpgUI\DownJpgEdit.aspx" />
+    <Content Include="T2Admin\DownJpgUI\DownJpgList.aspx" />
     <Content Include="Image\hongse.png" />
     <Content Include="Image\huise.png" />
-    <Content Include="List.aspx" />
-    <Content Include="Login.aspx" />
-    <Content Include="UserEdit.aspx" />
+    <Content Include="T1Admin\Admin.aspx" />
+    <Content Include="T1Admin\GetPos.aspx" />
+    <Content Include="T1Admin\List.aspx" />
+    <Content Include="T1Admin\Login.aspx" />
+    <Content Include="T1Admin\UserEdit.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T1Admin\Handler1.ashx" />
+    <Content Include="T2Admin\T2Admin.aspx" />
+    <Content Include="T2Admin\T2GetPos.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T2Admin\T2Handle1.ashx" />
+    <Content Include="T2Admin\T2List.aspx" />
+    <Content Include="T2Admin\T2Login.aspx" />
+    <Content Include="T2Admin\T2UserEdit.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

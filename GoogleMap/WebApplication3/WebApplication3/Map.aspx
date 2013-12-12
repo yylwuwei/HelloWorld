@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>地质异常监测组</title>
+    <title>T2地质异常监测组</title>
     <meta charset="UTF-8">
     <meta name="Generator" content="EditPlus">
     <meta name="Keywords" content="">
@@ -83,7 +83,7 @@
 
             $.ajax({
                 type: "get",
-                url: "Handler1.ashx",
+                url: "T2Admin/T2Handle1.ashx",
                 dataType: "json",
                 data: "name=yyl&pwd=123",
                 success: function(dataJson) {

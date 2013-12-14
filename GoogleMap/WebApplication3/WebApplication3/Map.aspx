@@ -26,6 +26,11 @@
         var yyFailSucMarkerArray = new Array();
         var yyType1Array = new Array();
         var yyType2Array = new Array();
+        var yyType3Array = new Array();
+        var yyType4Array = new Array();
+        var yyType5Array = new Array();
+        var yyType6Array = new Array();
+        var yyType7Array = new Array();        
         var yyCurType = "nono";        
         
         var yyPosArray = new Array(); //可以删掉
@@ -37,6 +42,11 @@
         var failSucIcon = "Image/hongse.png";
         var type1Icon = "Image/type1.png";
         var type2Icon = "Image/type2.png";
+        var type3Icon = "Image/type3.png";
+        var type4Icon = "Image/type4.png";
+        var type5Icon = "Image/type5.png";
+        var type6Icon = "Image/type6.png";
+        var type7Icon = "Image/type7.png";
         
         var yyIcon = "http://so.redocn.com/images/redocn/zhuce2.jpg";
         var yyContentStr = "hello,MM";
@@ -121,7 +131,7 @@
                 sucCount++;        
                 showLiID = sucCount;
             }
-            else if(type == "3" || type == "4" || type == "5" || type == "6") {
+            else if (type == "3" || type == "4" || type == "5" || type == "6" || type == "7" || type == "8" || type == "9" || type == "10" || type == "11") {
                 ulID = "ulIDTest3";
                 failCount++;
                 showLiID = failCount;
@@ -152,7 +162,12 @@
             yyFailMarkerArray = [];
             yyFailSucMarkerArray = [];
             yyType1Array = [];
-            yyType2Array = [];       
+            yyType2Array = [];
+            yyType3Array = [];
+            yyType4Array = [];
+            yyType5Array = [];
+            yyType6Array = [];
+            yyType7Array = [];
             yyPosArray = [];
             
             for (var i in yyDataJson) {
@@ -211,6 +226,51 @@
                 }
                 yyType2Array.push(yyMarker);
                 
+                }
+                else if (yyDataJson[i].Type == "7") {
+                    yyMarker.setIcon(type3Icon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyType3Array.push(yyMarker);
+
+                }
+                else if (yyDataJson[i].Type == "8") {
+                    yyMarker.setIcon(type4Icon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyType4Array.push(yyMarker);
+
+                }
+                else if (yyDataJson[i].Type == "9") {
+                    yyMarker.setIcon(type5Icon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyType5Array.push(yyMarker);
+
+                }
+                else if (yyDataJson[i].Type == "10") {
+                    yyMarker.setIcon(type6Icon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyType6Array.push(yyMarker);
+
+                }
+                else if (yyDataJson[i].Type == "11") {
+                    yyMarker.setIcon(type7Icon);
+                    yyMarker.setMap(null);
+                    if (yyCurType == "failLi") {
+                        yyMarker.setMap(map);
+                    }
+                    yyType7Array.push(yyMarker);
+
                 }
                 
                 yyMarkerArray[i] = yyMarker;
@@ -423,6 +483,21 @@
                     }
                     for (i in yyType2Array) {
                         yyType2Array[i].setMap(map);
+                    }
+                    for (i in yyType3Array) {
+                        yyType3Array[i].setMap(map);
+                    }
+                    for (i in yyType4Array) {
+                        yyType4Array[i].setMap(map);
+                    }
+                    for (i in yyType5Array) {
+                        yyType5Array[i].setMap(map);
+                    }
+                    for (i in yyType6Array) {
+                        yyType6Array[i].setMap(map);
+                    }
+                    for (i in yyType7Array) {
+                        yyType7Array[i].setMap(map);
                     }
                 }
             }

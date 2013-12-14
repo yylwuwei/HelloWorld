@@ -191,6 +191,11 @@
   <ItemGroup>
     <Content Include="Image\type1.png" />
     <Content Include="Image\type2.png" />
+    <Content Include="Image\type3.png" />
+    <Content Include="Image\type4.png" />
+    <Content Include="Image\type5.png" />
+    <Content Include="Image\type6.png" />
+    <Content Include="Image\type7.png" />
     <Content Include="T2Admin\T2Handle1.ashx" />
     <Content Include="T2Admin\T2List.aspx" />
     <Content Include="T2Admin\T2Login.aspx" />

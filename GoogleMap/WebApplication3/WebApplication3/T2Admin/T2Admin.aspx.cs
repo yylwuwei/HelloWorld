@@ -32,6 +32,11 @@ namespace WebApplication3.T2Admin
                 this.RadioButtonList1.Items.Add(new ListItem("同时显示的成功报告", "4"));
                 this.RadioButtonList1.Items.Add(new ListItem("Type1", "5"));
                 this.RadioButtonList1.Items.Add(new ListItem("Type2", "6"));
+                this.RadioButtonList1.Items.Add(new ListItem("Type3", "7"));
+                this.RadioButtonList1.Items.Add(new ListItem("Type4", "8"));
+                this.RadioButtonList1.Items.Add(new ListItem("Type5", "9"));
+                this.RadioButtonList1.Items.Add(new ListItem("Type6", "10"));
+                this.RadioButtonList1.Items.Add(new ListItem("Type7", "11"));
                 RadioButtonList1.SelectedIndex = 0;
                 this.btnSave.Visible = false;
                 this.Button1.Visible = false;

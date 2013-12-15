@@ -66,6 +66,17 @@
         	<tr>
         		<td>类型：</td><td>
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatDirection="Horizontal">
+                        <asp:ListItem Value="1">新的预告</asp:ListItem>
+                        <asp:ListItem Value="2">成功预告</asp:ListItem>
+                        <asp:ListItem Value="3">失败预告</asp:ListItem>
+                        <asp:ListItem Value="4">同时显示的成功</asp:ListItem>
+                        <asp:ListItem Value="5">Type1</asp:ListItem>
+                        <asp:ListItem Value="6">Type2</asp:ListItem>
+                        <asp:ListItem Value="7">Type3</asp:ListItem>
+                        <asp:ListItem Value="8">Type4</asp:ListItem>
+                        <asp:ListItem Value="9">Type5</asp:ListItem>
+                        <asp:ListItem Value="10">Type6</asp:ListItem>
+                        <asp:ListItem Value="11">Type7</asp:ListItem>
                     </asp:RadioButtonList>
                     <td>
         	</tr>

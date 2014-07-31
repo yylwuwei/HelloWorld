@@ -10,9 +10,8 @@
     <meta name="Description" content="">
     <!--[if lt ie 9]><script type="text/javascript" src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
 
     <link href="css/index.css" type="text/css" rel="stylesheet" media="all" />
 

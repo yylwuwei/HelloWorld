@@ -196,6 +196,7 @@
     <Content Include="Image\type5.png" />
     <Content Include="Image\type6.png" />
     <Content Include="Image\type7.png" />
+    <Content Include="JS\jquery-1.6.2.min.js" />
     <Content Include="T2Admin\T2Handle1.ashx" />
     <Content Include="T2Admin\T2List.aspx" />
     <Content Include="T2Admin\T2Login.aspx" />
@@ -203,7 +204,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="JS\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />

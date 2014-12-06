@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include "afxcmn.h"
 
 
 // CTimeManageWinDlg ¶Ô»°¿ò
@@ -29,4 +30,8 @@ protected:
 	afx_msg void OnPaint();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButtonTypeManage();
+	afx_msg void OnBnClickedButtonTimeManage();
+	CTreeCtrl m_treeType;
 };

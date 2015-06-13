@@ -45,7 +45,8 @@ namespace TestDownJpg
     {
         private bool bCheckRestart = true;
         private bool bCheckStart = false;
-        private string connStr = "Data Source=124.248.237.50;Initial Catalog=sqlybsp;Persist Security Info=True;User ID=sqlybsp;Password=gezhi";
+        //private string connStr = "Data Source=124.248.237.50;Initial Catalog=sqlybsp;Persist Security Info=True;User ID=sqlybsp;Password=gezhi";
+        private string connStr = "Data Source=123.254.107.141;Initial Catalog=sqlybsp;Persist Security Info=True;User ID=sqlybsp;Password=gezhi";
 
         private bool GetRunState()
         {
